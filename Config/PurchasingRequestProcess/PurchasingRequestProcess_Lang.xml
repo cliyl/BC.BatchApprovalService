@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageList>
+  <Language>
+    <Value>Chinese</Value>
+  </Language>
+  <MainTip>
+    <Id>lang_FormTitle</Id>
+    <Chinese>Purchasing Requisition^采购申请单</Chinese>
+    <English>Purchasing Requisition</English>
+    <Taiwanese></Taiwanese>
+    <Japanese></Japanese>
+    <Korean></Korean>
+    <French></French>
+    <Italian></Italian>
+  </MainTip>
+  <MainTip>
+    <Id>lang_Applicant</Id>
+    <Chinese>Applicant^申请人</Chinese>
+    <English>Applicant</English>
+    <Taiwanese></Taiwanese>
+    <Japanese></Japanese>
+    <Korean></Korean>
+    <French></French>
+    <Italian></Italian>
+  </MainTip>
+  <MainTip>
+    <Id>lang_RequestDate</Id>
+    <Chinese>Request Date^申请时间</Chinese>
+    <English>Request Date</English>
+    <Taiwanese></Taiwanese>
+    <Japanese></Japanese>
+    <Korean></Korean>
+    <French></French>
+    <Italian></Italian>
+  </MainTip>
+  <MainTip>
+    <Id>lang_Location</Id>
+    <Chinese>Location^工厂</Chinese>
+    <English>Location</English>
+    <Taiwanese></Taiwanese>
+    <Japanese></Japanese>
+    <Korean></Korean>
+    <French></French>
+    <Italian></Italian>
+  </MainTip>
+  <MainTip>
+    <Id>lang_ApplicationDepartment</Id>
+    <Chinese>Application Department^申请部门</Chinese>
+    <English>Application Department</English>
+    <Taiwanese></Taiwanese>
+    <Japanese></Japanese>
+    <Korean></Korean>
+    <French></French>
+    <Italian></Italian>
+  </MainTip>
+  <MainTip>
+    <Id>lang_UseDepartment</Id>
+    <Chinese>Use Department^使用部门</Chinese>
+    <English>Use Department</English>
+    <Taiwanese></Taiwanese>
+    <Japanese></Japanese>
+    <Korean></Korean>
+    <French></French>
+    <Italian></Italian>
+  </MainTip>
+  <MainTip>
+    <Id>lang_ProjectName</Id>
+    <Chinese>Project Name^项目名称</Chinese>
+    <English>Project Name</English>
+    <Taiwanese></Taiwanese>
+    <Japanese></Japanese>
+    <Korean></Korean>
+    <French></French>
+    <Italian></Italian>
+  </MainTip>
+  <MainTip>
+    <Id>lang_ARNumber</Id>
+    <Chinese>AR Number^AR 号</Chinese>
+    <English>AR Number</English>
+    <Taiwanese></Taiwanese>
+    <Japanese></Japanese>
+    <Korean></Korean>
+    <French></French>
+    <Italian></Italian>
+  </MainTip>
+  <MainTip>
+    <Id>lang_FinAccountNumber</Id>
+    <Chinese>Fin Account Number/WBS^财务费用科目/WBS</Chinese>
+    <English>Fin Account Number/WBS</English>
+    <Taiwanese></Taiwanese>
+    <Japanese></Japanese>
+    <Korean></Korean>
+    <French></French>
+    <Italian></Italian>
+  </MainTip>
+  <MainTip>
+    <Id>lang_PurType</Id>
+    <Chinese>Purchasing Type^采购类型</Chinese>
+    <English>Purchasing Type</English>
+    <Taiwanese></Taiwanese>
+    <Japanese></Japanese>
+    <Korean></Korean>
+    <French></French>
+    <Italian></Italian>
+  </MainTip>
+  <MainTip>
+    <Id>lang_PurType1</Id>
+    <Chinese>资产类（Capitalization）</Chinese>
+    <English>Capitalization</English>
+    <Taiwanese></Taiwanese>
+    <Japanese></Japanese>
+    <Korean></Korean>
+    <French></French>
+    <Italian></Italian>
+  </MainTip>
+  <MainTip>
+    <Id>lang_PurType2</Id>
+    <Chinese>费用类（Expenditure）</Chinese>
+    <English>Expenditure</English>
+    <Taiwanese></Taiwanese>
+    <Japanese></Japanese>
+    <Korean></Korean>
+    <French></French>
+    <Italian></Italian>
+  </MainTip>
+  <MainTip>
+    <Id>lang_Description</Id>
+    <Chinese>Description^采购事项描述</Chinese>
+    <English>Description</English>
+    <Taiwanese></Taiwanese>
+    <Japanese></Japanese>
+    <Korean></Korean>
+    <French></French>
+    <Italian></Italian>
+  </MainTip>
+  <MainTip>
+    <Id>lang_Qty</Id>
+    <Chinese>Qty^数量</Chinese>
+    <English>Qty</English>
+    <Taiwanese></Taiwanese>
+    <Japanese></Japanese>
+    <Korean></Korean>
+    <French></French>
+    <Italian></Italian>
+  </MainTip>
+  <MainTip>
+    <Id>lang_Unit</Id>
+    <Chinese>Unit^单位</Chinese>
+    <English>Unit</English>
+    <Taiwanese></Taiwanese>
+    <Japanese></Japanese>
+    <Korean></Korean>
+    <French></French>
+    <Italian></Italian>
+  </MainTip>
+  <MainTip>
+    <Id>lang_Price</Id>
+    <Chinese>Unit Price Est.(RMB)^单价</Chinese>
+    <English>Unit Price Est.(RMB)</English>
+    <Taiwanese></Taiwanese>
+    <Japanese></Japanese>
+    <Korean></Korean>
+    <French></French>
+    <Italian></Italian>
+  </MainTip>
+  <MainTip>
+    <Id>lang_STDCost</Id>
+    <Chinese>STD Cost^年度标准成本</Chinese>
+    <English>STD Cost</English>
+    <Taiwanese></Taiwanese>
+    <Japanese></Japanese>
+    <Korean></Korean>
+    <French></French>
+    <Italian></Italian>
+  </MainTip>
+  <MainTip>
+    <Id>lang_SubTotal</Id>
+    <Chinese>Sub-Total(RMB)^小计(不含税)</Chinese>
+    <English>Sub-Total(RMB)</English>
+    <Taiwanese></Taiwanese>
+    <Japanese></Japanese>
+    <Korean></Korean>
+    <French></French>
+    <Italian></Italian>
+  </MainTip>
+  <MainTip>
+    <Id>lang_MRD</Id>
+    <Chinese>Request Date^需求时间</Chinese>
+    <English>Request Date</English>
+    <Taiwanese></Taiwanese>
+    <Japanese></Japanese>
+    <Korean></Korean>
+    <French></French>
+    <Italian></Italian>
+  </MainTip>
+</LanguageList>

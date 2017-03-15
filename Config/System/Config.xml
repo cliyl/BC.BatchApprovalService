@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" standalone="yes"?>
+<List>
+  <System>
+    <!--======== 版本是非常重要的标识 ========-->
+    <Version>v1.0.1</Version>
+  </System>
+  <!--站点配置 -->
+  <WebSite>
+    <!-- ======================== 重点：请理解并配置 start ======================== -->
+    <!--当前程序站点的访问目录配置:/BC.BpmWeb/BC.OcWeb -->
+    <!--参考：<CurrentWebSite>/Cooper.UltMainWeb/UltBpm/Cooper.UltBpmWeb2</CurrentWebSite>-->
+    <CurrentWebSite>/Edoc2v4/WorkflowMain/Cooper.UltMainWeb/UltBpm/Cooper.UltBpmWeb2</CurrentWebSite>
+    <!-- ======================== 重点：请理解并配置 end   ======================== -->
+    <!--Edoc2v4访问目录配置（如：/Edoc2v4） -->
+    <Edoc2WebSite>/Edoc2v4</Edoc2WebSite>
+  </WebSite>
+  <!--Key配置 -->
+  <Key>
+    <!--是否限制Ultimus的许可的个数（0：不限制） -->
+    <UltimusLicenseCount>0</UltimusLicenseCount>
+    <!--域名（一般来说，域名是不需要配置的，是直接从域服务器导入的） -->
+    <Domain>Workgroup</Domain>
+    <!--上传附件的目录（如果空值，则上传至UploadFiles\\Files下。前后都不要加\\） -->
+    <TargetUploadFileFolder></TargetUploadFileFolder>
+    <!--上传附件文件类型 -->
+    <UploadFileType>*.rar;*.zip;*.7z;*.jpg;*.jpge;*.gif;*.png;*.doc;*.docx;*.xls;*.xlsx;*.pdf</UploadFileType>
+
+    <!--打印文件的目录（如果空值，则上传至UploadFiles\\PrintFiles下。前后都不要加\\） -->
+    <TargetPrintFileFolder></TargetPrintFileFolder>
+
+    <!--内网http://..... -->
+    <Network_HttpDomain>http://localhost</Network_HttpDomain>
+    <!--内网http://.....的Name -->
+    <Network_HttpDomain_Name>http://localhost/Edoc2v4</Network_HttpDomain_Name>
+    <!--外网http://..... -->
+    <Inernet_HttpDomain></Inernet_HttpDomain>
+    <!--外网http://.....的Name -->
+    <Inernet_HttpDomain_Name></Inernet_HttpDomain_Name>
+    <!--如：var formUrl = EDoc2Url + "/WorkFlow/UltWorkflow.Main/UltWfTransforToForm.aspx?TaskID=" + taskId + "&tkn=" + getTkn() + "&ProcessInfoID=" + ProcessId;-->
+    <!--跳转时中间页面的跳转地址-->
+    <TransPage>/WorkflowMain/Cooper.UltMainWeb/Workflow/UltWfTransforToForm.aspx</TransPage>
+
+	  <!--服务器名称 -->
+	  <MachineName>LIYU Machine</MachineName>
+
+	  <!--邮件发送管理员 -->
+	  <MailToAdmin>yu.li@macrowing.com</MailToAdmin>
+
+  </Key>
+
+
+</List>

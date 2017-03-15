@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" standalone="yes"?>
+<List>
+  <!--PurchasingRequestProcess -->
+  <PR>
+    <!--单位-->
+    <Unit>台;斤;升;座</Unit>
+    <PrintTemplatePath>F:\MyWorks\04_项目管理\00_项目中心\04_库博汽车标准配件(昆山)有限公司\Ultimus BPM_WuX-Proj-201509170909\源码管理\CooperUltBpm\Sol_CooperUltBpm\Cooper.Ult.BpmWeb\Process\PurchasingRequestProcessV2\Form\Print\Template_B\采购申请单PR Rev.G.doc</PrintTemplatePath>
+    <PrintTargetPath>F:\MyWorks\04_项目管理\00_项目中心\04_库博汽车标准配件(昆山)有限公司\Ultimus BPM_WuX-Proj-201509170909\源码管理\CooperUltBpm\Sol_CooperUltBpm\Cooper.Ult.BpmWeb\UploadFiles\PrintFiles\Purchasing Requisition</PrintTargetPath>
+  </PR>
+</List>

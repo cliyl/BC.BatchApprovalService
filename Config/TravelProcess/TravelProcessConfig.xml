@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" standalone="yes"?>
+<List>
+  <!--Edoc文件夹 -->
+  <EdocFolder>
+    <!--上传附件的文件夹Id 文件夹名称-->
+    <UploadFileFolder>17</UploadFileFolder>
+  </EdocFolder>
+</List>

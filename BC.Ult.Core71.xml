@@ -1,0 +1,713 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BC.Ult.Core71</name>
+    </assembly>
+    <members>
+        <member name="T:BC.Ult.Core71.UltWorkflowContext">
+            <summary>
+            Ultimus流程工厂类
+            </summary>
+        </member>
+        <member name="M:BC.Ult.Core71.UltWorkflowContext.CreateWorkflow">
+            <summary>
+            创建Ultimus流程实例
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:BC.Ult.Core71.WorkflowService.IService.IUltimus">
+            <summary>
+            Ultimus服务接口类
+            </summary>
+        </member>
+        <member name="M:BC.Ult.Core71.WorkflowService.IService.IUltimus.HelloWorld(System.String)">
+            <summary>
+            HelloWorld
+            </summary>
+            <param name="message">message</param>
+            <returns></returns>
+        </member>
+        <member name="M:BC.Ult.Core71.WorkflowService.IService.IUltimus.GetInitiateProcessByLoginName(BC.BaseContext.Common.ResultMessage,System.String)">
+            <summary>
+            *根据用户账号获取该用户所有的发起流程(2)
+            </summary>
+            <param name="resultMessage">resultMessage</param>
+            <param name="loginName">用户账号（如果有域则表示workgroup/liyu）</param>
+            <returns>返回该用户所有可以发起的流程信息</returns>
+        </member>
+        <member name="M:BC.Ult.Core71.WorkflowService.IService.IUltimus.GetTasks(BC.BaseContext.Common.ResultMessage,System.String,BC.Ult.Core71.WorkflowService.Model.Tasks@)">
+            <summary>
+            *获取任务信息(3)
+            </summary>
+            <param name="resultMessage">resultMessage</param>
+            <param name="taskId">任务Id</param>
+            <param name="tasks">返回Tasks实体对象</param>
+        </member>
+        <member name="M:BC.Ult.Core71.WorkflowService.IService.IUltimus.Send(BC.BaseContext.Common.ResultMessage,System.String,System.Collections.Generic.List{BC.Ult.Core71.WorkflowService.Model.Variables},System.String,System.String,System.String,System.Int32@)">
+            <summary>
+            *Ultimus流程提交(4)
+            </summary>
+            <param name="resultMessage">resultMessage</param>
+            <param name="taskId">任务Id</param>
+            <param name="variables">Ultimus变量参数集合</param>
+            <param name="summary">流程摘要</param>
+            <param name="assignedToUser">节点操作人员</param>
+            <param name="memo">备忘录</param>
+            <param name="incident">返回流程实例</param>
+            <returns>true：成功；false：失败；</returns>
+        </member>
+        <member name="M:BC.Ult.Core71.WorkflowService.IService.IUltimus.Abort(BC.BaseContext.Common.ResultMessage,System.String,System.Int32,System.String,System.String)">
+            <summary>
+            *Ultimus流程中止(当前流程未结束时，才能被中止)(5)
+            </summary>
+            <param name="resultMessage">resultMessage</param>
+            <param name="processName">流程名称</param>
+            <param name="incident">流程实例</param>
+            <param name="assignedToUser">节点操作人员</param>
+            <param name="reason">中止的理由</param>
+            <returns>true：成功；false：失败；</returns>
+        </member>
+        <member name="M:BC.Ult.Core71.WorkflowService.IService.IUltimus.Return(BC.BaseContext.Common.ResultMessage,System.String,System.Collections.Generic.List{BC.Ult.Core71.WorkflowService.Model.Variables},System.String,System.String)">
+            <summary>
+            *Ultimus流程任务退回(6)
+            </summary>
+            <param name="resultMessage">resultMessage</param>
+            <param name="taskId">任务Id</param>
+            <param name="variables">Ultimus变量参数集合</param>
+            <param name="summary">流程摘要</param>
+            <param name="memo">备忘录</param>
+            <returns>true：成功；false：失败；</returns>
+        </member>
+        <member name="M:BC.Ult.Core71.WorkflowService.IService.IUltimus.TakeBack(BC.BaseContext.Common.ResultMessage,System.String,System.String)">
+            <summary>
+            Ultimus流程任务回收(7)
+            </summary>
+            <param name="resultMessage">resultMessage</param>
+            <param name="taskId">任务Id</param>
+            <param name="assignedToUser">节点操作人员</param>
+            <returns>true：成功；false：失败；</returns>
+        </member>
+        <member name="M:BC.Ult.Core71.WorkflowService.IService.IUltimus.TaskGraphic(BC.BaseContext.Common.ResultMessage,System.String,System.Int32)">
+            <summary>
+            任务图（二进制流）(8)
+            </summary>
+            <param name="resultMessage">resultMessage</param>
+            <param name="processName">流程名称</param>
+            <param name="incident">实例号</param>
+            <returns>返回任务图（二进制流）</returns>
+        </member>
+        <member name="M:BC.Ult.Core71.WorkflowService.IService.IUltimus.SetVariableValues(BC.BaseContext.Common.ResultMessage,System.String,System.Int32,System.String,System.Object[])">
+            <summary>
+            设置变量值(9)
+            </summary>
+            <param name="resultMessage">resultMessage</param>
+            <param name="processName">流程名称</param>
+            <param name="incident">流程实例</param>
+            <param name="varibleName">变量名称</param>
+            <param name="varibleValues">变量值数组</param>
+            <returns>true：成功；false：失败；</returns>
+        </member>
+        <member name="M:BC.Ult.Core71.WorkflowService.IService.IUltimus.SetVariableValue(BC.BaseContext.Common.ResultMessage,System.String,System.Int32,System.String,System.Object)">
+            <summary>
+            设置变量值(10)
+            </summary>
+            <param name="resultMessage">resultMessage</param>
+            <param name="processName">流程名称</param>
+            <param name="incident">流程实例</param>
+            <param name="varibleName">变量名称</param>
+            <param name="varibleValue">变量值</param>
+            <returns>true：成功；false：失败；</returns>
+        </member>
+        <member name="M:BC.Ult.Core71.WorkflowService.IService.IUltimus.GetVariableValue(BC.BaseContext.Common.ResultMessage,System.String,System.String)">
+            <summary>
+            获取变量值(11)
+            </summary>
+            <param name="resultMessage">resultMessage</param>
+            <param name="taskId">任务Id</param>
+            <param name="varibleName">变量名称</param>
+            <returns>返回变量值</returns>
+        </member>
+        <member name="M:BC.Ult.Core71.WorkflowService.IService.IUltimus.GetVariableValue(BC.BaseContext.Common.ResultMessage,System.String,System.Int32,System.String,System.String,System.String)">
+            <summary>
+            获取变量值(12)
+            </summary>
+            <param name="resultMessage">resultMessage</param>
+            <param name="processName">流程名称</param>
+            <param name="incident">流程实例</param>
+            <param name="stepLabel">节点名称</param>
+            <param name="assignedToUser">节点操作人员</param>
+            <param name="varibleName">变量名称</param>
+            <returns>返回变量值</returns>
+        </member>
+        <member name="M:BC.Ult.Core71.WorkflowService.IService.IUltimus.GetAllTaskVariables(BC.BaseContext.Common.ResultMessage,System.String)">
+            <summary>
+            获取变量集合(13)
+            </summary>
+            <param name="resultMessage">resultMessage</param>
+            <param name="taskId">任务Id</param>
+            <returns>返回变量集合</returns>
+        </member>
+        <member name="M:BC.Ult.Core71.WorkflowService.IService.IUltimus.GetAllTaskVariables(BC.BaseContext.Common.ResultMessage,System.String,System.Int32,System.String,System.String)">
+            <summary>
+            获取变量集合(14)
+            </summary>
+            <param name="resultMessage">resultMessage</param>
+            <param name="processName">流程名称</param>
+            <param name="incident">流程实例</param>
+            <param name="stepLabel">节点名称</param>
+            <param name="assignedToUser">节点操作人员</param>
+            <returns>返回变量集合</returns>
+        </member>
+        <member name="P:BC.Ult.Core71.WorkflowService.IService.IUltimus.Tasks">
+            <summary>
+            *获取或者设置Ultimus流程任务实体对象(1)
+            </summary>
+        </member>
+        <member name="T:BC.Ult.Core71.WorkflowService.Model.Tasks">
+            <summary>
+            Ultimus任务表-实体类
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Core71.WorkflowService.Model.Tasks.taskId">
+            <summary>
+            任务Id
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Core71.WorkflowService.Model.Tasks.processName">
+            <summary>
+            流程名称
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Core71.WorkflowService.Model.Tasks.incident">
+            <summary>
+            流程实例
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Core71.WorkflowService.Model.Tasks.summary">
+            <summary>
+            摘要
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Core71.WorkflowService.Model.Tasks.processVersion">
+            <summary>
+            流程版本
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Core71.WorkflowService.Model.Tasks.taskStatus">
+            <summary>
+            状态
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Core71.WorkflowService.Model.Tasks.stepId">
+            <summary>
+            节点Id
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Core71.WorkflowService.Model.Tasks.stepLabel">
+            <summary>
+            节点名称
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Core71.WorkflowService.Model.Tasks.recipient">
+            <summary>
+            节点接受者
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Core71.WorkflowService.Model.Tasks.recipientFullName">
+            <summary>
+            节点接受者
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Core71.WorkflowService.Model.Tasks.recipientType">
+            <summary>
+            节点接受类型
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Core71.WorkflowService.Model.Tasks.taskUser">
+            <summary>
+            节点任务拥有者
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Core71.WorkflowService.Model.Tasks.taskUserFullName">
+            <summary>
+            节点任务拥有者
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Core71.WorkflowService.Model.Tasks.assignedToUser">
+            <summary>
+            节点任务拥有者
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Core71.WorkflowService.Model.Tasks.assignedToUserFullName">
+            <summary>
+            节点任务拥有者
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Core71.WorkflowService.Model.Tasks.subStatus">
+            <summary>
+            子状态
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Core71.WorkflowService.Model.Tasks.startTime">
+            <summary>
+            流程收到任务的时间
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Core71.WorkflowService.Model.Tasks.endTime">
+            <summary>
+            流程任务提交的时间
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Core71.WorkflowService.Model.Tasks.qStartTime">
+            <summary>
+            进队列的时间
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Core71.WorkflowService.Model.Tasks.qEndTime">
+            <summary>
+            出队列的时间
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Core71.WorkflowService.Model.Tasks.delayTime">
+            <summary>
+            延迟的时间
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Core71.WorkflowService.Model.Tasks.overDueTime">
+            <summary>
+            OVERDUETIME
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Core71.WorkflowService.Model.Tasks.urgentDueTime">
+            <summary>
+            URGENTDUETIME
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Core71.WorkflowService.Model.Tasks.taskRate">
+            <summary>
+            TASKRATE
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Core71.WorkflowService.Model.Tasks.taskTime">
+            <summary>
+            TASKTIME
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Core71.WorkflowService.Model.Tasks.cost">
+            <summary>
+            COST
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Core71.WorkflowService.Model.Tasks.notes">
+            <summary>
+            日志
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Core71.WorkflowService.Model.Tasks.referer">
+            <summary>
+            REFERER
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Core71.WorkflowService.Model.Tasks.localsS">
+            <summary>
+            任务流（图片二进制流）
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Core71.WorkflowService.Model.Tasks.helpUrl">
+            <summary>
+            帮助链接
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Core71.WorkflowService.Model.Tasks.TaskId">
+            <summary>
+            *获取或者设置任务Id(缺省值:string.Empty)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Core71.WorkflowService.Model.Tasks.ProcessName">
+            <summary>
+            *获取或者设置流程名称(缺省值:string.Empty)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Core71.WorkflowService.Model.Tasks.Incident">
+            <summary>
+            *获取或者设置流程实例(缺省值:0)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Core71.WorkflowService.Model.Tasks.Summary">
+            <summary>
+            *获取或者设置摘要(缺省值:string.Empty)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Core71.WorkflowService.Model.Tasks.ProcessVersion">
+            <summary>
+            获取或者设置流程版本(缺省值:-1)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Core71.WorkflowService.Model.Tasks.TaskStatus">
+            <summary>
+            获取或者设置实例状态(缺省值:-1)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Core71.WorkflowService.Model.Tasks.StepId">
+            <summary>
+            获取或者设置节点Id(缺省值:string.Empty)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Core71.WorkflowService.Model.Tasks.StepLabel">
+            <summary>
+            *获取或者设置节点名称(缺省值:string.Empty)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Core71.WorkflowService.Model.Tasks.Recipient">
+            <summary>
+            获取或者设置节点接受者(缺省值:string.Empty)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Core71.WorkflowService.Model.Tasks.RecipientFullName">
+            <summary>
+            获取或者设置节点接受者(缺省值:string.Empty)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Core71.WorkflowService.Model.Tasks.RecipientType">
+            <summary>
+            获取或者设置节点接受类型(缺省值:-1)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Core71.WorkflowService.Model.Tasks.TaskUser">
+            <summary>
+            获取或者设置节点任务拥有者(缺省值:string.Empty)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Core71.WorkflowService.Model.Tasks.TaskUserFullName">
+            <summary>
+            获取或者设置节点任务拥有者(缺省值:string.Empty)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Core71.WorkflowService.Model.Tasks.AssignedToUser">
+            <summary>
+            *获取或者设置节点任务拥有者(缺省值:string.Empty)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Core71.WorkflowService.Model.Tasks.AssignedToUserFullName">
+            <summary>
+            *获取或者设置节点任务拥有者(缺省值:string.Empty)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Core71.WorkflowService.Model.Tasks.SubStatus">
+            <summary>
+            获取或者设置子状态(缺省值:-1)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Core71.WorkflowService.Model.Tasks.StartTime">
+            <summary>
+            获取或者设置收到任务的时间(缺省值:new DateTime(1753, 11, 11, 11, 11, 11))
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Core71.WorkflowService.Model.Tasks.EndTime">
+            <summary>
+            获取或者设置任务提交的时间(缺省值:new DateTime(1753, 11, 11, 11, 11, 11))
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Core71.WorkflowService.Model.Tasks.QStartTime">
+            <summary>
+            获取或者设置进队列的时间(缺省值:new DateTime(1753, 11, 11, 11, 11, 11))
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Core71.WorkflowService.Model.Tasks.QEndTime">
+            <summary>
+            获取或者设置出队列的时间(缺省值:new DateTime(1753, 11, 11, 11, 11, 11))
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Core71.WorkflowService.Model.Tasks.DelayTime">
+            <summary>
+            获取或者设置延迟的时间(缺省值:new DateTime(1753, 11, 11, 11, 11, 11))
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Core71.WorkflowService.Model.Tasks.OverDueTime">
+            <summary>
+            获取或者设置OVERDUETIME(缺省值:new DateTime(1753, 11, 11, 11, 11, 11))
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Core71.WorkflowService.Model.Tasks.UrgentDueTime">
+            <summary>
+            获取或者设置URGENTDUETIME(缺省值:new DateTime(1753, 11, 11, 11, 11, 11))
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Core71.WorkflowService.Model.Tasks.TaskRate">
+            <summary>
+            获取或者设置TASKRATE(缺省值:-1)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Core71.WorkflowService.Model.Tasks.TaskTime">
+            <summary>
+            获取或者设置TASKTIME(缺省值:-1)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Core71.WorkflowService.Model.Tasks.Cost">
+            <summary>
+            获取或者设置COST(缺省值:-1)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Core71.WorkflowService.Model.Tasks.Notes">
+            <summary>
+            获取或者设置日志(缺省值:string.Empty)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Core71.WorkflowService.Model.Tasks.Referer">
+            <summary>
+            获取或者设置REFERER(缺省值:string.Empty)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Core71.WorkflowService.Model.Tasks.LocalsS">
+            <summary>
+            获取或者设置任务流(图片二进制流)(缺省值:new byte[0])
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Core71.WorkflowService.Model.Tasks.HelpUrl">
+            <summary>
+            获取或者设置帮助链接(缺省值:string.Empty)
+            </summary>
+        </member>
+        <member name="T:BC.Ult.Core71.WorkflowService.Model.Variables">
+            <summary>
+            Ultimus变量类
+            </summary>
+        </member>
+        <member name="M:BC.Ult.Core71.WorkflowService.Model.Variables.#ctor">
+            <summary>
+            Ultimus变量
+            </summary>
+        </member>
+        <member name="M:BC.Ult.Core71.WorkflowService.Model.Variables.#ctor(System.String,System.Object)">
+            <summary>
+            Ultimus变量
+            </summary>
+            <param name="name">变量名称</param>
+            <param name="value">变量值</param>
+        </member>
+        <member name="F:BC.Ult.Core71.WorkflowService.Model.Variables.variableName">
+            <summary>
+            Ultimus变量名称
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Core71.WorkflowService.Model.Variables.variableValue">
+            <summary>
+            Ultimus变量值
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Core71.WorkflowService.Model.Variables.VariableName">
+            <summary>
+            获取或者设置Ultimus变量名称(缺省值:string.Empty)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Core71.WorkflowService.Model.Variables.VariableValue">
+            <summary>
+            获取或者设置Ultimus变量值(缺省值:string.Empty)
+            </summary>
+        </member>
+        <member name="T:BC.Ult.Core71.WorkflowService.UltCommon">
+            <summary>
+            UltCommon
+            </summary>
+        </member>
+        <member name="M:BC.Ult.Core71.WorkflowService.UltCommon.GetTask(System.String)">
+            <summary>
+            根据taskId-获取Ultimus任务信息
+            </summary>
+            <param name="taskId">taskId</param>
+            <returns>返回UltimusTask信息</returns>
+        </member>
+        <member name="M:BC.Ult.Core71.WorkflowService.UltCommon.GetTask(System.String,System.Int32,System.String,System.String)">
+            <summary>
+            根据流程名称、流程实例、节点名称、节点操作人员-获取Ultimus任务信息
+            </summary>
+            <param name="processName">流程名称</param>
+            <param name="incident">流程实例</param>
+            <param name="stepLabel">节点名称</param>
+            <param name="assignedToUser">节点操作人员</param>
+            <returns></returns>
+        </member>
+        <member name="M:BC.Ult.Core71.WorkflowService.UltCommon.ConvertToVariables(System.Collections.Generic.List{BC.Ult.Core71.WorkflowService.Model.Variables})">
+            <summary>
+            UltimusVariable集合转换成Variable数组
+            </summary>
+            <param name="variables">List[UltimusVariable]集合</param>
+            <returns>返回Variable数组</returns>
+        </member>
+        <member name="M:BC.Ult.Core71.WorkflowService.UltCommon.ConvertToListVariables(Ultimus.WFServer.Variable[])">
+            <summary>
+            Variable数组转换成UltimusVariables集合
+            </summary>
+            <param name="variables">variables[]数组</param>
+            <returns></returns>
+        </member>
+        <member name="M:BC.Ult.Core71.WorkflowService.UltCommon.SetTasksAndIncidents(Ultimus.WFServer.Task,BC.Ult.Core71.WorkflowService.Model.Tasks@)">
+            <summary>
+            设置Tasks实体对象及Incidents实体对象
+            </summary>
+            <param name="task">task</param>
+            <param name="tasks">tasks</param>
+        </member>
+        <member name="M:BC.Ult.Core71.WorkflowService.UltCommon.SetDataTableTasks(Ultimus.WFServer.Tasklist,System.Data.DataTable@)">
+            <summary>
+            设置DataTableTasks
+            </summary>
+            <param name="taskList">任务列表</param>
+            <param name="dtTasks">DataTableTasks</param>
+        </member>
+        <member name="M:BC.Ult.Core71.WorkflowService.UltCommon.SetDataTableInitiateProcessColumns">
+            <summary>
+            配置一个关于自定义Ultimus任务的DataTable列的集合
+            </summary>
+            <returns>返回一个关于自定义Ultimus任务的DataTable列的集合</returns>
+        </member>
+        <member name="T:BC.Ult.Core71.WorkflowService.UltimusService">
+            <summary>
+            Ultimus服务类
+            </summary>
+        </member>
+        <member name="M:BC.Ult.Core71.WorkflowService.UltimusService.HelloWorld(System.String)">
+            <summary>
+            Hello Word
+            </summary>
+            <param name="message">message</param>
+            <returns></returns>
+        </member>
+        <member name="M:BC.Ult.Core71.WorkflowService.UltimusService.GetInitiateProcessByLoginName(BC.BaseContext.Common.ResultMessage,System.String)">
+            <summary>
+            *根据用户账号获取该用户所有的发起流程
+            </summary>
+            <param name="resultMessage">resultMessage</param>
+            <param name="loginName">用户账号（如果有域则表示workgroup/liyu）</param>
+            <returns>返回该用户所有可以发起的流程信息</returns>
+        </member>
+        <member name="M:BC.Ult.Core71.WorkflowService.UltimusService.GetTasks(BC.BaseContext.Common.ResultMessage,System.String,BC.Ult.Core71.WorkflowService.Model.Tasks@)">
+            <summary>
+            *获取任务信息
+            </summary>
+            <param name="resultMessage">resultMessage</param>
+            <param name="taskId">任务Id</param>
+            <param name="tasks">返回Tasks实体对象</param>
+        </member>
+        <member name="M:BC.Ult.Core71.WorkflowService.UltimusService.Send(BC.BaseContext.Common.ResultMessage,System.String,System.Collections.Generic.List{BC.Ult.Core71.WorkflowService.Model.Variables},System.String,System.String,System.String,System.Int32@)">
+            <summary>
+            *Ultimus流程提交
+            </summary>
+            <param name="resultMessage">resultMessage</param>
+            <param name="taskId">任务Id</param>
+            <param name="variables">Ultimus变量参数集合</param>
+            <param name="summary">流程摘要</param>
+            <param name="assignedToUser">节点操作人员</param>
+            <param name="memo">备忘录</param>
+            <param name="incident">流程实例</param>
+            <returns>true：成功；false：失败；</returns>
+        </member>
+        <member name="M:BC.Ult.Core71.WorkflowService.UltimusService.Abort(BC.BaseContext.Common.ResultMessage,System.String,System.Int32,System.String,System.String)">
+            <summary>
+            *Ultimus流程中止(当前流程未结束时，才能被中止)
+            </summary>
+            <param name="resultMessage">resultMessage</param>
+            <param name="processName">流程名称</param>
+            <param name="incident">流程实例</param>
+            <param name="assignedToUser">节点操作人员</param>
+            <param name="reason">中止的理由</param>
+            <returns>true：成功；false：失败；</returns>
+        </member>
+        <member name="M:BC.Ult.Core71.WorkflowService.UltimusService.Return(BC.BaseContext.Common.ResultMessage,System.String,System.Collections.Generic.List{BC.Ult.Core71.WorkflowService.Model.Variables},System.String,System.String)">
+            <summary>
+            *Ultimus流程任务退回
+            </summary>
+            <param name="resultMessage">resultMessage</param>
+            <param name="taskId">任务Id</param>
+            <param name="variables">Ultimus变量参数集合</param>
+            <param name="summary">流程摘要</param>
+            <param name="memo">备忘录</param>
+            <returns>true：成功；false：失败；</returns>
+        </member>
+        <member name="M:BC.Ult.Core71.WorkflowService.UltimusService.TakeBack(BC.BaseContext.Common.ResultMessage,System.String,System.String)">
+            <summary>
+            Ultimus流程任务回收
+            </summary>
+            <param name="resultMessage">resultMessage</param>
+            <param name="taskId">任务Id</param>
+            <param name="assignedToUser">节点操作人员</param>
+            <returns>true：成功；false：失败；</returns>
+        </member>
+        <member name="M:BC.Ult.Core71.WorkflowService.UltimusService.TaskGraphic(BC.BaseContext.Common.ResultMessage,System.String,System.Int32)">
+            <summary>
+            任务图（二进制流）
+            </summary>
+            <param name="resultMessage">resultMessage</param>
+            <param name="processName">流程名称</param>
+            <param name="incident">实例号</param>
+            <returns>返回任务图（二进制流）</returns>
+        </member>
+        <member name="M:BC.Ult.Core71.WorkflowService.UltimusService.GetVariableValue(BC.BaseContext.Common.ResultMessage,System.String,System.String)">
+            <summary>
+            获取变量值
+            </summary>
+            <param name="resultMessage">resultMessage</param>
+            <param name="taskId">任务Id</param>
+            <param name="varibleName">变量名称</param>
+            <returns>返回变量值</returns>
+        </member>
+        <member name="M:BC.Ult.Core71.WorkflowService.UltimusService.GetVariableValue(BC.BaseContext.Common.ResultMessage,System.String,System.Int32,System.String,System.String,System.String)">
+            <summary>
+            获取变量值
+            </summary>
+            <param name="resultMessage">resultMessage</param>
+            <param name="processName">流程名称</param>
+            <param name="incident">流程实例</param>
+            <param name="stepLabel">节点名称</param>
+            <param name="assignedToUser">节点操作人员</param>
+            <param name="varibleName">变量名称</param>
+            <returns>返回变量值</returns>
+        </member>
+        <member name="M:BC.Ult.Core71.WorkflowService.UltimusService.GetAllTaskVariables(BC.BaseContext.Common.ResultMessage,System.String)">
+            <summary>
+            获取变量集合
+            </summary>
+            <param name="resultMessage">resultMessage</param>
+            <param name="taskId">任务Id</param>
+            <returns>返回变量值</returns>
+        </member>
+        <member name="M:BC.Ult.Core71.WorkflowService.UltimusService.GetAllTaskVariables(BC.BaseContext.Common.ResultMessage,System.String,System.Int32,System.String,System.String)">
+            <summary>
+            获取变量集合
+            </summary>
+            <param name="resultMessage">resultMessage</param>
+            <param name="processName">流程名称</param>
+            <param name="incident">流程实例</param>
+            <param name="stepLabel">节点名称</param>
+            <param name="assignedToUser">节点操作人员</param>
+            <returns>返回变量值</returns>
+        </member>
+        <member name="M:BC.Ult.Core71.WorkflowService.UltimusService.SetVariableValue(BC.BaseContext.Common.ResultMessage,System.String,System.Int32,System.String,System.Object)">
+            <summary>
+            设置变量值
+            </summary>
+            <param name="resultMessage">resultMessage</param>
+            <param name="processName">流程名称</param>
+            <param name="incident">流程实例</param>
+            <param name="varibleName">变量名称</param>
+            <param name="varibleValue">变量值</param>
+            <returns>true：成功；false：失败；</returns>
+        </member>
+        <member name="M:BC.Ult.Core71.WorkflowService.UltimusService.SetVariableValues(BC.BaseContext.Common.ResultMessage,System.String,System.Int32,System.String,System.Object[])">
+            <summary>
+            设置变量值
+            </summary>
+            <param name="resultMessage">resultMessage</param>
+            <param name="processName">流程名称</param>
+            <param name="incident">流程实例</param>
+            <param name="varibleName">变量名称</param>
+            <param name="varibleValues">变量值数组</param>
+            <returns>true：成功；false：失败；</returns>
+        </member>
+        <member name="P:BC.Ult.Core71.WorkflowService.UltimusService.Tasks">
+            <summary>
+            *获取或者Ultimus流程任务实体对象
+            </summary>
+        </member>
+    </members>
+</doc>

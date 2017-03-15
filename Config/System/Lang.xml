@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageList>
+  <Language>
+    <Value>Chinese</Value>
+  </Language>
+  <MainTip>
+    <Id>name</Id>
+    <Chinese>姓名</Chinese>
+    <English>Name</English>
+    <Taiwanese></Taiwanese>
+    <Japanese></Japanese>
+    <Korean></Korean>
+    <French></French>
+    <Italian></Italian>
+  </MainTip>
+  <MainTip>
+    <Id>age</Id>
+    <Chinese>年龄</Chinese>
+    <English>Age</English>
+    <Taiwanese></Taiwanese>
+    <Japanese></Japanese>
+    <Korean></Korean>
+    <French></French>
+    <Italian></Italian>
+  </MainTip>
+</LanguageList>

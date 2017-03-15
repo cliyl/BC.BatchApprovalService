@@ -1,0 +1,3709 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BC.Ult.Data</name>
+    </assembly>
+    <members>
+        <member name="T:BC.Ult.Data.BusinessServices.Business.BusinessInfo">
+            <summary>
+            业务信息处理
+            </summary>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Business.BusinessInfo.SaveBusiness(BC.BaseContext.Concrete.Trans,BC.Ult.Data.SetUltArgsBase,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            保存业务数据
+            </summary>
+            <param name="t">事务对象</param>
+            <param name="setUltArgs">设置Ultimus参数对象</param>
+            <param name="resultMessage">返回结果信息</param>
+            <returns>true:成功;false:失败;</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Business.BusinessInfo.CheckSetUltArgs(BC.Ult.Data.SetUltArgsBase,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            验证Ultimus业务参数
+            </summary>
+            <param name="setUltArgs">setUltArgs</param>
+            <param name="resultMessage">resultMessage</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Business.BusinessInfo.AbortProcess(BC.BaseContext.Concrete.Trans,BC.Ult.Data.AbortArgsBase,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            中止流程（只能中止未结束的流程）
+            </summary>
+            <param name="t">事务对象</param>
+            <param name="abortArgsBase">abortArgsBase 对象</param>
+            <param name="resultMessage">返回结果信息</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Business.BusinessInfo.CheckAbortArgs(BC.Ult.Data.AbortArgsBase,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            验证中止流程的业务参数
+            </summary>
+            <param name="abortArgsBase">abortArgsBase 对象</param>
+            <param name="resultMessage">resultMessage</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Business.BusinessInfo.GetActivationProcessTaskId(BC.BaseContext.Concrete.Trans,BC.Ult.Data.ActivationArgsBase,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            获取激活流程的TaskId
+            </summary>
+            <param name="t">事务对象</param>
+            <param name="activationArgsBase">activationArgsBase 对象</param>
+            <param name="resultMessage">返回结果信息</param>
+            <returns></returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Business.BusinessInfo.CheckActivationArgs(BC.Ult.Data.ActivationArgsBase,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            验证激活流程的业务参数
+            </summary>
+            <param name="activationArgsBase">activationArgsBase 对象</param>
+            <param name="resultMessage">resultMessage</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Business.BusinessInfo.GetProcessChecked(System.String,BC.BaseContext.Concrete.DbType,System.String,System.String,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            获取流程提交时的，验证数据的正确性
+            1. 验证当前的ProcessId是否存在。如果有值则存在；反之，不存在。
+            2. 验证当前的ProcessId是否已经被提交成功过了。如果有值则已经提交过来；反之，还未提交。
+            3. 验证Ultimus License是否超出
+            </summary>
+            <param name="connStr">链接字符串</param>
+            <param name="dbType">数据库类型</param>
+            <param name="processId">流程Id</param>
+            <param name="taskId">任务Id</param>
+            <param name="resultMessage">返回结果信息</param>
+            <returns>返回流程提交时的检验对象</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Business.BusinessInfo.GetStepUserCount(System.Collections.Generic.List{BC.Ult.Data.StepUserInfo},System.String)">
+            <summary>
+            根据会签Key获取人员的数量（或者总数据）
+            </summary>
+            <param name="stepUserList">节点人员列表</param>
+            <param name="signKey">会签Key</param>
+            <returns></returns>
+        </member>
+        <member name="T:BC.Ult.Data.BusinessServices.Business.CountersignBusiness">
+            <summary>
+            Countersign-业务类
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.BusinessServices.Business.CountersignBusiness.business">
+            <summary>
+            实例化数据库操作对象
+            </summary>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Business.CountersignBusiness.#ctor(System.String,BC.BaseContext.Concrete.DbType)">
+            <summary>
+            Countersign-业务类(构造函数)
+            </summary>
+            <param name="connStr">链接字符串</param>
+            <param name="dbType">数据库类型</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Business.CountersignBusiness.AddCountersign(BC.BaseContext.Concrete.Trans,BC.Ult.Data.BusinessServices.Model.Data.Countersign,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            新增Countersign
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Business.CountersignBusiness.DeleteCountersign(BC.BaseContext.Concrete.Trans,BC.Ult.Data.BusinessServices.Model.Data.Countersign,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            删除Countersign
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Business.CountersignBusiness.UpdateCountersign(BC.BaseContext.Concrete.Trans,BC.Ult.Data.BusinessServices.Model.Data.Countersign,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            修改Countersign
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Business.CountersignBusiness.GetAllCountersign(BC.BaseContext.Concrete.Trans,BC.Ult.Data.BusinessServices.Model.Data.Countersign,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            获取所有Countersign
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="r">返回类</param>
+            <returns>返回DataTable对象</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Business.CountersignBusiness.DataReaderAllCountersign(BC.BaseContext.Concrete.Trans,BC.Ult.Data.BusinessServices.Model.Data.Countersign,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            获取所有Countersign
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="r">返回类</param>
+            <returns>返回IDataReader对象</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Business.CountersignBusiness.DeleteCountersignByProcessId(BC.BaseContext.Concrete.Trans,BC.Ult.Data.BusinessServices.Model.Data.Countersign,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            根据ProcessId删除Countersign
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="T:BC.Ult.Data.BusinessServices.Business.ProcessBusiness">
+            <summary>
+            Process-业务类
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.BusinessServices.Business.ProcessBusiness.business">
+            <summary>
+            实例化数据库操作对象
+            </summary>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Business.ProcessBusiness.#ctor(System.String,BC.BaseContext.Concrete.DbType)">
+            <summary>
+            Process-业务类(构造函数)
+            </summary>
+            <param name="connStr">链接字符串</param>
+            <param name="dbType">数据库类型</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Business.ProcessBusiness.AddProcess(BC.BaseContext.Concrete.Trans,BC.Ult.Data.BusinessServices.Model.Data.Process,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            新增Process
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Business.ProcessBusiness.DeleteProcess(BC.BaseContext.Concrete.Trans,BC.Ult.Data.BusinessServices.Model.Data.Process,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            删除Process
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Business.ProcessBusiness.UpdateProcess(BC.BaseContext.Concrete.Trans,BC.Ult.Data.BusinessServices.Model.Data.Process,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            修改Process
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Business.ProcessBusiness.GetAllProcess(BC.BaseContext.Concrete.Trans,BC.Ult.Data.BusinessServices.Model.Data.Process,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            获取所有Process
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="r">返回类</param>
+            <returns>返回DataTable对象</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Business.ProcessBusiness.DataReaderAllProcess(BC.BaseContext.Concrete.Trans,BC.Ult.Data.BusinessServices.Model.Data.Process,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            获取所有Process
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="r">返回类</param>
+            <returns>返回IDataReader对象</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Business.ProcessBusiness.UpdateProcessByNameIncident(BC.BaseContext.Concrete.Trans,BC.Ult.Data.BusinessServices.Model.Data.Process,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            流程成功中止后修改Process
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Business.ProcessBusiness.GetProcessChecked(System.String,System.String,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            获取流程提交时的，验证数据的正确性
+            1. 验证当前的ProcessId是否存在。如果有值则存在；反之，不存在。
+            2. 验证当前的ProcessId是否已经被提交成功过了。如果有值则已经提交过来；反之，还未提交。
+            3. 验证Ultimus License是否超出
+            </summary>
+            <param name="processId">流程Id</param>
+            <param name="taskId">任务Id</param>
+            <returns>返回DataSet对象</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Business.ProcessBusiness.DeleteProcessByProcessId(BC.BaseContext.Concrete.Trans,BC.Ult.Data.BusinessServices.Model.Data.Process,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            根据ProcessId删除Process
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="T:BC.Ult.Data.ProcessProvider">
+            <summary>
+            流程操作助手
+            </summary>
+        </member>
+        <member name="T:BC.Ult.Data.IProcessProvider">
+            <summary>
+            流程操作助手
+            </summary>
+        </member>
+        <member name="M:BC.Ult.Data.IProcessProvider.InitProcess(BC.BaseContext.Concrete.Trans,System.String,BC.BaseContext.Concrete.DbType,System.String,System.String,System.String,System.String,BC.BaseContext.Common.ResultMessage,System.String@)">
+            <summary>
+            预加载流程
+            </summary>
+            <param name="t">事务对象</param>
+            <param name="connStr">链接字符串</param>
+            <param name="dbType">链接类型</param>
+            <param name="userCode">UserCode（流程发起人，一般为UserId）</param>
+            <param name="processName">流程名称</param>
+            <param name="summary">流程摘要</param>
+            <param name="processParentId">父流程Id</param>
+            <param name="resultMessage">返回结果信息</param>
+            <param name="newProcessId">返回的流程Id</param>
+        </member>
+        <member name="M:BC.Ult.Data.IProcessProvider.SubmitProcess(BC.BaseContext.Concrete.Trans,BC.Ult.Data.SetUltArgsBase,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            提交流程（包含草稿）
+            </summary>
+            <param name="t">事务对象</param>
+            <param name="setUltArgs">设置Ultimus参数对象</param>
+            <param name="resultMessage">返回结果信息</param>
+        </member>
+        <member name="M:BC.Ult.Data.IProcessProvider.AbortProcess(BC.BaseContext.Concrete.Trans,BC.Ult.Data.AbortArgsBase,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            中止流程（只能中止未结束的流程）
+            </summary>
+            <param name="t">事务对象</param>
+            <param name="abortArgsBase">abortArgsBase 对象</param>
+            <param name="resultMessage">返回结果信息</param>
+        </member>
+        <member name="M:BC.Ult.Data.IProcessProvider.ActivationProcess(BC.BaseContext.Concrete.Trans,BC.Ult.Data.ActivationArgsBase,System.Int32@,System.String@,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            激活流程
+            </summary>
+            <param name="t">事务对象</param>
+            <param name="activationArgsBase">activationArgsBase 对象</param>
+            <param name="subProcessIncident">返回激活成功后子流程的新实例号</param>
+            <param name="subProcessId">返回激活成功后子流程的新ProcessId</param>
+            <param name="resultMessage">返回结果信息</param>
+        </member>
+        <member name="M:BC.Ult.Data.IProcessProvider.GetProcessChecked(System.String,BC.BaseContext.Concrete.DbType,System.String,System.String,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            获取流程提交时的，验证数据的正确性
+            1. 验证当前的ProcessId是否存在。如果有值则存在；反之，不存在。
+            2. 验证当前的ProcessId是否已经被提交成功过了。如果有值则已经提交过来；反之，还未提交。
+            3. 验证Ultimus License是否超出
+            </summary>
+            <param name="connStr">链接字符串</param>
+            <param name="dbType">数据库类型</param>
+            <param name="processId">流程Id</param>
+            <param name="taskId">任务Id</param>
+            <param name="resultMessage">返回结果信息</param>
+            <returns>返回流程提交时的检验对象</returns>
+        </member>
+        <member name="M:BC.Ult.Data.ProcessProvider.InitProcess(BC.BaseContext.Concrete.Trans,System.String,BC.BaseContext.Concrete.DbType,System.String,System.String,System.String,System.String,BC.BaseContext.Common.ResultMessage,System.String@)">
+            <summary>
+            预加载流程
+            </summary>
+            <param name="t">事务对象</param>
+            <param name="connStr">链接字符串</param>
+            <param name="dbType">链接类型</param>
+            <param name="userCode">UserCode（流程发起人，一般为UserId）</param>
+            <param name="processName">流程名称</param>
+            <param name="summary">流程摘要</param>
+            <param name="processParentId">父流程Id</param>
+            <param name="resultMessage">返回结果信息</param>
+            <param name="newProcessId">返回的流程Id</param>
+        </member>
+        <member name="M:BC.Ult.Data.ProcessProvider.SubmitProcess(BC.BaseContext.Concrete.Trans,BC.Ult.Data.SetUltArgsBase,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            提交流程（包含草稿）
+            </summary>
+            <param name="t">事务对象</param>
+            <param name="setUltArgs">设置Ultimus参数对象</param>
+            <param name="resultMessage">返回结果信息</param>
+        </member>
+        <member name="M:BC.Ult.Data.ProcessProvider.AbortProcess(BC.BaseContext.Concrete.Trans,BC.Ult.Data.AbortArgsBase,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            中止流程（只能中止未结束的流程）每次执行成功，会休息300毫秒
+            </summary>
+            <param name="t">事务对象</param>
+            <param name="abortArgsBase">abortArgsBase 对象</param>
+            <param name="resultMessage">返回结果信息</param>
+        </member>
+        <member name="M:BC.Ult.Data.ProcessProvider.ActivationProcess(BC.BaseContext.Concrete.Trans,BC.Ult.Data.ActivationArgsBase,System.Int32@,System.String@,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            激活流程
+            </summary>
+            <param name="t">事务对象</param>
+            <param name="activationArgsBase">activationArgsBase 对象</param>
+            <param name="subProcessIncident">返回激活成功后子流程的新实例号</param>
+            <param name="subProcessId">返回激活成功后子流程的新ProcessId</param>
+            <param name="resultMessage">返回结果信息</param>
+        </member>
+        <member name="M:BC.Ult.Data.ProcessProvider.GetProcessChecked(System.String,BC.BaseContext.Concrete.DbType,System.String,System.String,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            获取流程提交时的，验证数据的正确性
+            1. 验证当前的ProcessId是否存在。如果有值则存在；反之，不存在。
+            2. 验证当前的ProcessId是否已经被提交成功过了。如果有值则已经提交过来；反之，还未提交。
+            3. 验证Ultimus License是否超出
+            </summary>
+            <param name="connStr">链接字符串</param>
+            <param name="dbType">数据库类型</param>
+            <param name="processId">流程Id</param>
+            <param name="taskId">任务Id</param>
+            <param name="resultMessage">返回结果信息</param>
+            <returns>返回流程提交时的检验对象</returns>
+        </member>
+        <member name="T:BC.Ult.Data.BusinessServices.Business.Queue.TaskDoing">
+            <summary>
+            任务工作中
+            </summary>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Business.Queue.TaskDoing.#ctor(BC.Ult.Data.BusinessServices.Business.Queue.TaskManager)">
+            <summary>
+            邮件发送处理-构造函数
+            </summary>
+            <param name="taskManager">taskManager</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Business.Queue.TaskDoing.Start(BC.Ult.Data.BusinessServices.Business.Queue.TaskManager)">
+            <summary>
+            开始处理
+            </summary>
+            <param name="taskManager">taskManager</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Business.Queue.TaskDoing.DoThreadFunc">
+            <summary>
+            读取队列中的对象函数
+            </summary>
+        </member>
+        <member name="T:BC.Ult.Data.BusinessServices.Business.Queue.TaskManager">
+            <summary>
+            任务管理
+            </summary>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Business.Queue.TaskManager.#ctor">
+            <summary>
+            任务管理-构造函数
+            </summary>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Business.Queue.TaskManager.AddQueue(BC.Ult.Data.BusinessServices.Business.Queue.TaskQueue,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            添加队列具体信息
+            </summary>
+            <param name="taskQueue">taskQueue</param>
+            <param name="resultMessage">resultMessage</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Business.Queue.TaskManager.GetQueueItem">
+            <summary>
+            读取队列信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Business.Queue.TaskManager.IsAvailable">
+            <summary>
+            只读属性,确定队列中是不是还有元素
+            </summary>
+        </member>
+        <member name="T:BC.Ult.Data.BusinessServices.Business.Queue.TaskQueue">
+            <summary>
+            任务对象
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.BusinessServices.Business.Queue.TaskQueue.connStr">
+            <summary>
+            链接字符串（UltProcess业务库）
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.BusinessServices.Business.Queue.TaskQueue.dbType">
+            <summary>
+            数据类型
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.BusinessServices.Business.Queue.TaskQueue.variables">
+            <summary>
+            Ultimus参数（用此函数，因为要进行序列化）
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.BusinessServices.Business.Queue.TaskQueue.stepLabel">
+            <summary>
+            节点名称
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.BusinessServices.Business.Queue.TaskQueue.assignedToUser">
+            <summary>
+            节点任务操作者
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.BusinessServices.Business.Queue.TaskQueue.taskId">
+            <summary>
+            任务Id
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.BusinessServices.Business.Queue.TaskQueue.processName">
+            <summary>
+            流程名称
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.BusinessServices.Business.Queue.TaskQueue.incident">
+            <summary>
+            流程实例
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.BusinessServices.Business.Queue.TaskQueue.summary">
+            <summary>
+            摘要
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.BusinessServices.Business.Queue.TaskQueue.processId">
+            <summary>
+            流程Id
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.BusinessServices.Business.Queue.TaskQueue.processIsEnd">
+            <summary>
+            流程是否办结
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Business.Queue.TaskQueue.ConnStr">
+            <summary>
+            *获取或者设置-链接字符串（UltProcess业务库）(缺省值:string.Empty)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Business.Queue.TaskQueue.DbType">
+            <summary>
+            *获取或者设置-数据类型(缺省值:DbContext.Concrete.DbType.SqlServer)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Business.Queue.TaskQueue.Variables">
+            <summary>
+            *获取或者设置-Ultimus参数
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Business.Queue.TaskQueue.StepLabel">
+            <summary>
+            *获取或者设置-节点名称(缺省值:null)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Business.Queue.TaskQueue.AssignedToUser">
+            <summary>
+            *获取或者设置-节点任务操作者(workgroup/liyu)(缺省值:null)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Business.Queue.TaskQueue.TaskId">
+            <summary>
+            *获取或者设置-任务Id(缺省值:null)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Business.Queue.TaskQueue.ProcessName">
+            <summary>
+            *获取或者设置-流程名称(缺省值:null)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Business.Queue.TaskQueue.Incident">
+            <summary>
+            *获取或者设置-流程实例(缺省值:0)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Business.Queue.TaskQueue.Summary">
+            <summary>
+            *获取或者设置-摘要(缺省值:null)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Business.Queue.TaskQueue.ProcessId">
+            <summary>
+            *获取或者设置-流程Id(缺省值:null)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Business.Queue.TaskQueue.ProcessIsEnd">
+            <summary>
+            *获取或者设置-流程是否办结(缺省值:false)
+            </summary>
+        </member>
+        <member name="T:BC.Ult.Data.BusinessServices.Business.StepUsersBusiness">
+            <summary>
+            StepUsers-业务类
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.BusinessServices.Business.StepUsersBusiness.business">
+            <summary>
+            实例化数据库操作对象
+            </summary>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Business.StepUsersBusiness.#ctor(System.String,BC.BaseContext.Concrete.DbType)">
+            <summary>
+            StepUsers-业务类(构造函数)
+            </summary>
+            <param name="connStr">链接字符串</param>
+            <param name="dbType">数据库类型</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Business.StepUsersBusiness.AddStepUsers(BC.BaseContext.Concrete.Trans,BC.Ult.Data.BusinessServices.Model.Data.StepUsers,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            新增StepUsers
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Business.StepUsersBusiness.DeleteStepUsers(BC.BaseContext.Concrete.Trans,BC.Ult.Data.BusinessServices.Model.Data.StepUsers,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            删除StepUsers
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Business.StepUsersBusiness.UpdateStepUsers(BC.BaseContext.Concrete.Trans,BC.Ult.Data.BusinessServices.Model.Data.StepUsers,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            修改StepUsers
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Business.StepUsersBusiness.GetAllStepUsers(BC.BaseContext.Concrete.Trans,BC.Ult.Data.BusinessServices.Model.Data.StepUsers,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            获取所有StepUsers
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="r">返回类</param>
+            <returns>返回DataTable对象</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Business.StepUsersBusiness.DataReaderAllStepUsers(BC.BaseContext.Concrete.Trans,BC.Ult.Data.BusinessServices.Model.Data.StepUsers,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            获取所有StepUsers
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="r">返回类</param>
+            <returns>返回IDataReader对象</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Business.StepUsersBusiness.DeleteStepUsersByProcessId(BC.BaseContext.Concrete.Trans,BC.Ult.Data.BusinessServices.Model.Data.StepUsers,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            根据ProcessId删除StepUsers
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="T:BC.Ult.Data.BusinessServices.Business.TaskApprovalBusiness">
+            <summary>
+            TaskApproval-业务类
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.BusinessServices.Business.TaskApprovalBusiness.business">
+            <summary>
+            实例化数据库操作对象
+            </summary>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Business.TaskApprovalBusiness.#ctor(System.String,BC.BaseContext.Concrete.DbType)">
+            <summary>
+            TaskApproval-业务类(构造函数)
+            </summary>
+            <param name="connStr">链接字符串</param>
+            <param name="dbType">数据库类型</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Business.TaskApprovalBusiness.AddTaskApproval(BC.BaseContext.Concrete.Trans,BC.Ult.Data.BusinessServices.Model.Data.TaskApproval,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            新增TaskApproval
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Business.TaskApprovalBusiness.DeleteTaskApproval(BC.BaseContext.Concrete.Trans,BC.Ult.Data.BusinessServices.Model.Data.TaskApproval,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            删除TaskApproval
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Business.TaskApprovalBusiness.UpdateTaskApproval(BC.BaseContext.Concrete.Trans,BC.Ult.Data.BusinessServices.Model.Data.TaskApproval,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            修改TaskApproval
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Business.TaskApprovalBusiness.GetAllTaskApproval(BC.BaseContext.Concrete.Trans,BC.Ult.Data.BusinessServices.Model.Data.TaskApproval,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            获取所有TaskApproval
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="r">返回类</param>
+            <returns>返回DataTable对象</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Business.TaskApprovalBusiness.DataReaderAllTaskApproval(BC.BaseContext.Concrete.Trans,BC.Ult.Data.BusinessServices.Model.Data.TaskApproval,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            获取所有TaskApproval
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="r">返回类</param>
+            <returns>返回IDataReader对象</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Business.TaskApprovalBusiness.InsertOrUpdateTaskApproval(BC.BaseContext.Concrete.Trans,BC.Ult.Data.SetUltArgsBase,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            新增或者修改TaskApproval
+            </summary>
+            <param name="t">事务</param>
+            <param name="setUltArgs">设置Ultimus参数对象</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Business.TaskApprovalBusiness.GetTaskApproval(BC.BaseContext.Concrete.Trans,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            获取所有ApprovalStatus=2的任务数据
+            </summary>
+            <param name="t">事务</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+            <returns>返回IDataReader对象</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Business.TaskApprovalBusiness.DeleteTaskApprovalByProcessId(BC.BaseContext.Concrete.Trans,BC.Ult.Data.BusinessServices.Model.Data.TaskApproval,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            根据ProcessId删除TaskApproval
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="T:BC.Ult.Data.BusinessServices.Business.UltimusVariablesBusiness">
+            <summary>
+            UltimusVariables-业务类
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.BusinessServices.Business.UltimusVariablesBusiness.business">
+            <summary>
+            实例化数据库操作对象
+            </summary>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Business.UltimusVariablesBusiness.#ctor(System.String,BC.BaseContext.Concrete.DbType)">
+            <summary>
+            UltimusVariables-业务类(构造函数)
+            </summary>
+            <param name="connStr">链接字符串</param>
+            <param name="dbType">数据库类型</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Business.UltimusVariablesBusiness.AddUltimusVariables(BC.BaseContext.Concrete.Trans,BC.Ult.Data.BusinessServices.Model.Data.UltimusVariables,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            新增UltimusVariables
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Business.UltimusVariablesBusiness.DeleteUltimusVariables(BC.BaseContext.Concrete.Trans,BC.Ult.Data.BusinessServices.Model.Data.UltimusVariables,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            删除UltimusVariables
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Business.UltimusVariablesBusiness.UpdateUltimusVariables(BC.BaseContext.Concrete.Trans,BC.Ult.Data.BusinessServices.Model.Data.UltimusVariables,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            修改UltimusVariables
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Business.UltimusVariablesBusiness.GetAllUltimusVariables(BC.BaseContext.Concrete.Trans,BC.Ult.Data.BusinessServices.Model.Data.UltimusVariables,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            获取所有UltimusVariables
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="r">返回类</param>
+            <returns>返回DataTable对象</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Business.UltimusVariablesBusiness.DataReaderAllUltimusVariables(BC.BaseContext.Concrete.Trans,BC.Ult.Data.BusinessServices.Model.Data.UltimusVariables,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            获取所有UltimusVariables
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="r">返回类</param>
+            <returns>返回IDataReader对象</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Business.UltimusVariablesBusiness.DeleteUltimusVariablesByProcessId(BC.BaseContext.Concrete.Trans,BC.Ult.Data.BusinessServices.Model.Data.UltimusVariables,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            根据ProcessId删除UltimusVariables
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="T:BC.Ult.Data.BusinessServices.Core.UltimusLocal">
+            <summary>
+            通过Local(本地)访问Ultimus类库
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.BusinessServices.Core.UltimusLocal.iUltimus">
+            <summary>
+            Ultimus流程接口对象
+            </summary>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Core.UltimusLocal.#ctor">
+            <summary>
+            构造方法-实例化Ultimus对象
+            </summary>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Core.UltimusLocal.HelloWorld(System.String)">
+            <summary>
+            Hello Word
+            </summary>
+            <param name="message">message</param>
+            <returns></returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Core.UltimusLocal.GetInitiateProcessByLoginName(BC.BaseContext.Common.ResultMessage,System.String)">
+            <summary>
+            *根据用户账号获取该用户所有的发起流程
+            </summary>
+            <param name="resultMessage">resultMessage</param>
+            <param name="loginName">用户账号（如果有域则表示workgroup/liyu）</param>
+            <returns>返回该用户所有可以发起的流程信息</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Core.UltimusLocal.GetTasks(BC.BaseContext.Common.ResultMessage,System.String,BC.Ult.Core71.WorkflowService.Model.Tasks@)">
+            <summary>
+            *获取任务信息
+            </summary>
+            <param name="resultMessage">resultMessage</param>
+            <param name="taskId">任务Id</param>
+            <param name="tasks">返回Tasks实体对象</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Core.UltimusLocal.Send(BC.BaseContext.Common.ResultMessage,System.String,System.Collections.Generic.List{BC.Ult.Core71.WorkflowService.Model.Variables},System.String,System.String,System.String,System.Int32@)">
+            <summary>
+            *Ultimus流程提交
+            </summary>
+            <param name="resultMessage">resultMessage</param>
+            <param name="taskId">任务Id</param>
+            <param name="variables">Ultimus变量参数集合</param>
+            <param name="summary">流程摘要</param>
+            <param name="assignedToUser">节点操作人员</param>
+            <param name="memo">备忘录</param>
+            <param name="incident">流程实例</param>
+            <returns>true：成功；false：失败；</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Core.UltimusLocal.Abort(BC.BaseContext.Common.ResultMessage,System.String,System.Int32,System.String,System.String)">
+            <summary>
+            *Ultimus流程中止(当前流程未结束时，才能被中止)
+            </summary>
+            <param name="resultMessage">resultMessage</param>
+            <param name="processName">流程名称</param>
+            <param name="incident">流程实例</param>
+            <param name="assignedToUser">节点操作人员</param>
+            <param name="reason">中止的理由</param>
+            <returns>true：成功；false：失败；</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Core.UltimusLocal.Return(BC.BaseContext.Common.ResultMessage,System.String,System.Collections.Generic.List{BC.Ult.Core71.WorkflowService.Model.Variables},System.String,System.String)">
+            <summary>
+            *Ultimus流程任务退回
+            </summary>
+            <param name="resultMessage">resultMessage</param>
+            <param name="taskId">任务Id</param>
+            <param name="variables">Ultimus变量参数集合</param>
+            <param name="summary">流程摘要</param>
+            <param name="memo">备忘录</param>
+            <returns>true：成功；false：失败；</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Core.UltimusLocal.TakeBack(BC.BaseContext.Common.ResultMessage,System.String,System.String)">
+            <summary>
+            Ultimus流程任务回收
+            </summary>
+            <param name="resultMessage">resultMessage</param>
+            <param name="taskId">任务Id</param>
+            <param name="assignedToUser">节点操作人员</param>
+            <returns>true：成功；false：失败；</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Core.UltimusLocal.TaskGraphic(BC.BaseContext.Common.ResultMessage,System.String,System.Int32)">
+            <summary>
+            任务图（二进制流）
+            </summary>
+            <param name="resultMessage">resultMessage</param>
+            <param name="processName">流程名称</param>
+            <param name="incident">实例号</param>
+            <returns>返回任务图（二进制流）</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Core.UltimusLocal.GetVariableValue(BC.BaseContext.Common.ResultMessage,System.String,System.String)">
+            <summary>
+            获取变量值
+            </summary>
+            <param name="resultMessage">resultMessage</param>
+            <param name="taskId">任务Id</param>
+            <param name="varibleName">变量名称</param>
+            <returns>返回变量值</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Core.UltimusLocal.GetVariableValue(BC.BaseContext.Common.ResultMessage,System.String,System.Int32,System.String,System.String,System.String)">
+            <summary>
+            获取变量值
+            </summary>
+            <param name="resultMessage">resultMessage</param>
+            <param name="processName">流程名称</param>
+            <param name="incident">流程实例</param>
+            <param name="stepLabel">节点名称</param>
+            <param name="assignedToUser">节点操作人员</param>
+            <param name="varibleName">变量名称</param>
+            <returns>返回变量值</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Core.UltimusLocal.GetAllTaskVariables(BC.BaseContext.Common.ResultMessage,System.String)">
+            <summary>
+            获取变量集合
+            </summary>
+            <param name="resultMessage">resultMessage</param>
+            <param name="taskId">任务Id</param>
+            <returns>返回变量值</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Core.UltimusLocal.GetAllTaskVariables(BC.BaseContext.Common.ResultMessage,System.String,System.Int32,System.String,System.String)">
+            <summary>
+            获取变量集合
+            </summary>
+            <param name="resultMessage">resultMessage</param>
+            <param name="processName">流程名称</param>
+            <param name="incident">流程实例</param>
+            <param name="stepLabel">节点名称</param>
+            <param name="assignedToUser">节点操作人员</param>
+            <returns>返回变量值</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Core.UltimusLocal.SetVariableValue(BC.BaseContext.Common.ResultMessage,System.String,System.Int32,System.String,System.Object)">
+            <summary>
+            设置变量值
+            </summary>
+            <param name="resultMessage">resultMessage</param>
+            <param name="processName">流程名称</param>
+            <param name="incident">流程实例</param>
+            <param name="varibleName">变量名称</param>
+            <param name="varibleValue">变量值</param>
+            <returns>true：成功；false：失败；</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Core.UltimusLocal.SetVariableValues(BC.BaseContext.Common.ResultMessage,System.String,System.Int32,System.String,System.Object[])">
+            <summary>
+            设置变量值
+            </summary>
+            <param name="resultMessage">resultMessage</param>
+            <param name="processName">流程名称</param>
+            <param name="incident">流程实例</param>
+            <param name="varibleName">变量名称</param>
+            <param name="varibleValues">变量值数组</param>
+            <returns>true：成功；false：失败；</returns>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Core.UltimusLocal.Tasks">
+            <summary>
+            *获取或者Ultimus流程任务实体对象
+            </summary>
+        </member>
+        <member name="T:BC.Ult.Data.BusinessServices.Core.UltimusWebService">
+            <summary>
+            通过WebService访问Ultimus类库
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.BusinessServices.Core.UltimusWebService.iUltimus">
+            <summary>
+            Ultimus流程接口对象
+            </summary>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Core.UltimusWebService.#ctor">
+            <summary>
+            构造方法-实例化Ultimus对象
+            </summary>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Core.UltimusWebService.HelloWorld(System.String)">
+            <summary>
+            HelloWorld
+            </summary>
+            <param name="message">message</param>
+            <returns></returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Core.UltimusWebService.HelloWorld2(BC.BaseContext.Common.ResultMessage,System.String,System.Collections.Generic.List{BC.Ult.Core71.WorkflowService.Model.Variables},System.String,System.String,System.String,System.Int32@)">
+            <summary>
+            *HelloWorld2
+            </summary>
+            <param name="resultMessage">resultMessage</param>
+            <param name="taskId">任务Id</param>
+            <param name="variables">Ultimus变量参数集合（序列化）</param>
+            <param name="summary">流程摘要</param>
+            <param name="assignedToUser">节点操作人员</param>
+            <param name="memo">备忘录</param>
+            <param name="incident">流程实例</param>
+            <returns>true：成功；false：失败；</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Core.UltimusWebService.GetInitiateProcessByLoginName(BC.BaseContext.Common.ResultMessage,System.String)">
+            <summary>
+            *根据用户账号获取该用户所有的发起流程(2)
+            </summary>
+            <param name="resultMessage">resultMessage</param>
+            <param name="loginName">用户账号（如果有域则表示workgroup/liyu）</param>
+            <returns>返回该用户所有可以发起的流程信息</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Core.UltimusWebService.GetTasks(BC.BaseContext.Common.ResultMessage,System.String,BC.Ult.Core71.WorkflowService.Model.Tasks@)">
+            <summary>
+            *获取任务信息(3)
+            </summary>
+            <param name="resultMessage">resultMessage</param>
+            <param name="taskId">任务Id</param>
+            <param name="tasks">返回Tasks实体对象</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Core.UltimusWebService.Send(BC.BaseContext.Common.ResultMessage,System.String,System.Collections.Generic.List{BC.Ult.Core71.WorkflowService.Model.Variables},System.String,System.String,System.String,System.Int32@)">
+            <summary>
+            *Ultimus流程提交(4)
+            </summary>
+            <param name="resultMessage">resultMessage</param>
+            <param name="taskId">任务Id</param>
+            <param name="variables">Ultimus变量参数集合</param>
+            <param name="summary">流程摘要</param>
+            <param name="assignedToUser">节点操作人员</param>
+            <param name="memo">备忘录</param>
+            <param name="incident">流程实例</param>
+            <returns>true：成功；false：失败；</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Core.UltimusWebService.Abort(BC.BaseContext.Common.ResultMessage,System.String,System.Int32,System.String,System.String)">
+            <summary>
+            *Ultimus流程中止(当前流程未结束时，才能被中止)(5)
+            </summary>
+            <param name="resultMessage">resultMessage</param>
+            <param name="processName">流程名称</param>
+            <param name="incident">流程实例</param>
+            <param name="assignedToUser">节点操作人员</param>
+            <param name="reason">中止的理由</param>
+            <returns>true：成功；false：失败；</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Core.UltimusWebService.Return(BC.BaseContext.Common.ResultMessage,System.String,System.Collections.Generic.List{BC.Ult.Core71.WorkflowService.Model.Variables},System.String,System.String)">
+            <summary>
+            *Ultimus流程任务退回(6)
+            </summary>
+            <param name="resultMessage">resultMessage</param>
+            <param name="taskId">任务Id</param>
+            <param name="variables">Ultimus变量参数集合</param>
+            <param name="summary">流程摘要</param>
+            <param name="memo">备忘录</param>
+            <returns>true：成功；false：失败；</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Core.UltimusWebService.TakeBack(BC.BaseContext.Common.ResultMessage,System.String,System.String)">
+            <summary>
+            Ultimus流程任务回收(7)
+            </summary>
+            <param name="resultMessage">resultMessage</param>
+            <param name="taskId">任务Id</param>
+            <param name="assignedToUser">节点操作人员</param>
+            <returns>true：成功；false：失败；</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Core.UltimusWebService.TaskGraphic(BC.BaseContext.Common.ResultMessage,System.String,System.Int32)">
+            <summary>
+            任务图（二进制流）(8)
+            </summary>
+            <param name="resultMessage">resultMessage</param>
+            <param name="processName">流程名称</param>
+            <param name="incident">实例号</param>
+            <returns>返回任务图（二进制流）</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Core.UltimusWebService.SetVariableValues(BC.BaseContext.Common.ResultMessage,System.String,System.Int32,System.String,System.Object[])">
+            <summary>
+            设置变量值(9)
+            </summary>
+            <param name="resultMessage">resultMessage</param>
+            <param name="processName">流程名称</param>
+            <param name="incident">流程实例</param>
+            <param name="varibleName">变量名称</param>
+            <param name="varibleValues">变量值数组</param>
+            <returns>true：成功；false：失败；</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Core.UltimusWebService.SetVariableValue(BC.BaseContext.Common.ResultMessage,System.String,System.Int32,System.String,System.Object)">
+            <summary>
+            设置变量值(10)
+            </summary>
+            <param name="resultMessage">resultMessage</param>
+            <param name="processName">流程名称</param>
+            <param name="incident">流程实例</param>
+            <param name="varibleName">变量名称</param>
+            <param name="varibleValue">变量值</param>
+            <returns>true：成功；false：失败；</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Core.UltimusWebService.GetVariableValue(BC.BaseContext.Common.ResultMessage,System.String,System.String)">
+            <summary>
+            获取变量值(11)
+            </summary>
+            <param name="resultMessage">resultMessage</param>
+            <param name="taskId">任务Id</param>
+            <param name="varibleName">变量名称</param>
+            <returns>返回变量值</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Core.UltimusWebService.GetVariableValue(BC.BaseContext.Common.ResultMessage,System.String,System.Int32,System.String,System.String,System.String)">
+            <summary>
+            获取变量值(12)
+            </summary>
+            <param name="resultMessage">resultMessage</param>
+            <param name="processName">流程名称</param>
+            <param name="incident">流程实例</param>
+            <param name="stepLabel">节点名称</param>
+            <param name="assignedToUser">节点操作人员</param>
+            <param name="varibleName">变量名称</param>
+            <returns>返回变量值</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Core.UltimusWebService.GetAllTaskVariables(BC.BaseContext.Common.ResultMessage,System.String)">
+            <summary>
+            获取变量集合(13)
+            </summary>
+            <param name="resultMessage">resultMessage</param>
+            <param name="taskId">任务Id</param>
+            <returns>返回变量值</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Core.UltimusWebService.GetAllTaskVariables(BC.BaseContext.Common.ResultMessage,System.String,System.Int32,System.String,System.String)">
+            <summary>
+            获取变量集合(14)
+            </summary>
+            <param name="resultMessage">resultMessage</param>
+            <param name="processName">流程名称</param>
+            <param name="incident">流程实例</param>
+            <param name="stepLabel">节点名称</param>
+            <param name="assignedToUser">节点操作人员</param>
+            <returns>返回变量值</returns>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Core.UltimusWebService.Tasks">
+            <summary>
+            *获取或者Ultimus流程任务实体对象(1)
+            </summary>
+        </member>
+        <member name="T:BC.Ult.Data.BusinessServices.Model.Data.Countersign">
+            <summary>
+            Countersign-实体类(Data model)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.Countersign.Id">
+            <summary>
+            获取或者设置:ID
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.Countersign.CreateDate">
+            <summary>
+            获取或者设置:创建时间
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.Countersign.CreateUserCode">
+            <summary>
+            获取或者设置:创建人员
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.Countersign.ProcessId">
+            <summary>
+            获取或者设置:流程Id
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.Countersign.SignKey">
+            <summary>
+            获取或者设置:会签KEY
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.Countersign.FirstSignUserCount">
+            <summary>
+            获取或者设置:第一次的人员数量
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.Countersign.FirstSignOpinion">
+            <summary>
+            获取或者设置:第一次的会签审批意见（-1：无审批；0：同意；1：拒绝；）
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.Countersign.SignUserCount">
+            <summary>
+            获取或者设置:人员数量（每次提交成功一次就减一次）
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.Countersign.SignOpinion">
+            <summary>
+            获取或者设置:会签审批意见（-1：无审批；0：同意；1：拒绝；）
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.Countersign.Notes">
+            <summary>
+            获取或者设置:备注
+            </summary>
+        </member>
+        <member name="T:BC.Ult.Data.BusinessServices.Model.Data.Process">
+            <summary>
+            Process-实体类(Data model)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.Process.ProcessId">
+            <summary>
+            获取或者设置:流程Id
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.Process.CreateDate">
+            <summary>
+            获取或者设置:创建时间
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.Process.CreateUserCode">
+            <summary>
+            获取或者设置:创建人员
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.Process.ModifyDate">
+            <summary>
+            获取或者设置:修改时间
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.Process.ModifyUserCode">
+            <summary>
+            获取或者设置:修改人员
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.Process.DelStatus">
+            <summary>
+            获取或者设置:逻辑删除（0：未删除；1：已删除）
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.Process.ProcessName">
+            <summary>
+            获取或者设置:流程名称
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.Process.Incident">
+            <summary>
+            获取或者设置:流程实例号
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.Process.Summary">
+            <summary>
+            获取或者设置:摘要
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.Process.ProcessParentId">
+            <summary>
+            获取或者设置:流程父Id
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.Process.ProcessStatus">
+            <summary>
+            获取或者设置:流程状态（-1：加载成功后；101：第一次草稿保存成功后；102：流程第一次提交成功后；103：流程结束成功后；104：流程撤销后——流程撤销后，验证【不重复业务数据】还能使用，这样的话，客户可以自己来撤销流程；）
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.Process.SaveTime">
+            <summary>
+            获取或者设置:Begin时草稿保存的时间
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.Process.SendTime">
+            <summary>
+            获取或者设置:Begin时流程提交的时间
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.Process.EndTime">
+            <summary>
+            获取或者设置:流程结束时间
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.Process.AbortTime">
+            <summary>
+            获取或者设置:流程撤销时间
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.Process.IncidentTime">
+            <summary>
+            获取或者设置:Begin时获得流程实例的时间
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.Process.Notes">
+            <summary>
+            获取或者设置:备注
+            </summary>
+        </member>
+        <member name="T:BC.Ult.Data.BusinessServices.Model.Data.StepUsers">
+            <summary>
+            StepUsers-实体类(Data model)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.StepUsers.Id">
+            <summary>
+            获取或者设置:ID
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.StepUsers.CreateDate">
+            <summary>
+            获取或者设置:创建时间
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.StepUsers.CreateUserCode">
+            <summary>
+            获取或者设置:创建人员
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.StepUsers.ProcessId">
+            <summary>
+            获取或者设置:流程Id
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.StepUsers.StepLabel">
+            <summary>
+            获取或者设置:节点名称
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.StepUsers.UserCode">
+            <summary>
+            获取或者设置:节点人员
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.StepUsers.Notes">
+            <summary>
+            获取或者设置:备注
+            </summary>
+        </member>
+        <member name="T:BC.Ult.Data.BusinessServices.Model.Data.TaskApproval">
+            <summary>
+            TaskApproval-实体类(Data model)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.TaskApproval.Id">
+            <summary>
+            获取或者设置:ID
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.TaskApproval.CreateDate">
+            <summary>
+            获取或者设置:创建时间
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.TaskApproval.CreateUserCode">
+            <summary>
+            获取或者设置:创建人员
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.TaskApproval.ModifyDate">
+            <summary>
+            获取或者设置:修改时间
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.TaskApproval.ModifyUserCode">
+            <summary>
+            获取或者设置:修改人员
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.TaskApproval.ProcessId">
+            <summary>
+            获取或者设置:流程Id
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.TaskApproval.SignKey">
+            <summary>
+            获取或者设置:会签KEY
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.TaskApproval.TaskId">
+            <summary>
+            获取或者设置:任务Id
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.TaskApproval.StepLabel">
+            <summary>
+            获取或者设置:节点名称
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.TaskApproval.Opinion">
+            <summary>
+            获取或者设置:审批意见（-1：无审批；0：同意；1：拒绝；）
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.TaskApproval.Comments">
+            <summary>
+            获取或者设置:审批内容
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.TaskApproval.ApprovalStatus">
+            <summary>
+            获取或者设置:审批状态类型（-1：无提交；101：业务草稿提交成功；102：业务提交成功；1021：进Ultimus提交队列中；1022：出Ultimus提交队列；103：业务数据成功及Ultimus提交成功；1031：业务数据成功但Ultimus提交失败；）
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.TaskApproval.ResultSignUserCount">
+            <summary>
+            获取或者设置:当前节点提交后根据SignKey来计算当前用户数量
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.TaskApproval.ResultSignOpinion">
+            <summary>
+            获取或者设置:当前节点最后的会签审批意见有一个不同意，则为不同意（-1：无审批；0：同意；1：拒绝；）
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.TaskApproval.IP">
+            <summary>
+            获取或者设置:用户IP
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.TaskApproval.SignedPhotograph">
+            <summary>
+            获取或者设置:签名照二进制流
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.TaskApproval.IsQueueOperation">
+            <summary>
+            获取或者设置:是否用队列方式操作（0：用队列方式；1：不用队列方式；）
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.TaskApproval.SaveTime">
+            <summary>
+            获取或者设置:保存草稿的时间（101）
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.TaskApproval.SendTime">
+            <summary>
+            获取或者设置:业务提交成功的时间（102）
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.TaskApproval.QStartTime">
+            <summary>
+            获取或者设置:进Ultimus提交队列中（1021）
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.TaskApproval.QEndTime">
+            <summary>
+            获取或者设置:出Ultimus提交队列中（1022）
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.TaskApproval.EndTime">
+            <summary>
+            获取或者设置:业务数据成功及Ultimus都提交成功的时间（103）
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.TaskApproval.FailedTime">
+            <summary>
+            获取或者设置:业务数据成功及Ultimus都提交失败的时间（1031）
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.TaskApproval.ProcessIsEnd">
+            <summary>
+            获取或者设置:流程是否办结（0：是办结；1：不是办结；）
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.TaskApproval.IsCurrentBatch">
+            <summary>
+            获取或者设置:是否当前批次（0：审批的当前批次；1：审批的历史批次；）
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.TaskApproval.Notes">
+            <summary>
+            获取或者设置:备注
+            </summary>
+        </member>
+        <member name="T:BC.Ult.Data.BusinessServices.Model.Data.UltimusVariables">
+            <summary>
+            UltimusVariables-实体类(Data model)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.UltimusVariables.Id">
+            <summary>
+            获取或者设置:ID
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.UltimusVariables.CreateDate">
+            <summary>
+            获取或者设置:创建时间
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.UltimusVariables.CreateUserCode">
+            <summary>
+            获取或者设置:创建人员
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.UltimusVariables.ModifyDate">
+            <summary>
+            获取或者设置:修改时间
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.UltimusVariables.ModifyUserCode">
+            <summary>
+            获取或者设置:修改人员
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.UltimusVariables.ProcessId">
+            <summary>
+            获取或者设置:流程Id
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.UltimusVariables.TaskId">
+            <summary>
+            获取或者设置:任务Id
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.UltimusVariables.VariableName">
+            <summary>
+            获取或者设置:变量名称
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.UltimusVariables.VariableValue">
+            <summary>
+            获取或者设置:变量值（数组值用*隔开）
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.BusinessServices.Model.Data.UltimusVariables.Notes">
+            <summary>
+            获取或者设置:备注
+            </summary>
+        </member>
+        <member name="T:BC.Ult.Data.AbortArgsBase">
+            <summary>
+            终止流程对象
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.AbortArgsBase.connStr">
+            <summary>
+            链接字符串（UltProcess业务库）
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.AbortArgsBase.dbType">
+            <summary>
+            数据类型
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.AbortArgsBase.processName">
+            <summary>
+            流程名称
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.AbortArgsBase.incident">
+            <summary>
+            流程实例
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.AbortArgsBase.assignedToUser">
+            <summary>
+            节点任务拥有者
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.AbortArgsBase.reason">
+            <summary>
+            Ultimus理由
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.AbortArgsBase.ConnStr">
+            <summary>
+            *获取或者设置-链接字符串（UltProcess业务库）(缺省值:string.Empty)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.AbortArgsBase.DbType">
+            <summary>
+            *获取或者设置-数据类型(缺省值:DbContext.Concrete.DbType.SqlServer)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.AbortArgsBase.ProcessName">
+            <summary>
+            *获取或者设置流程名称(缺省值:string.Empty)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.AbortArgsBase.Incident">
+            <summary>
+            *获取或者设置流程实例(缺省值:0)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.AbortArgsBase.AssignedToUser">
+            <summary>
+            *获取或者设置节点任务拥有者(缺省值:string.Empty)
+            备注：admin和流程的发起人 都能中止
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.AbortArgsBase.Reason">
+            <summary>
+            获取或者设置-Ultimus理由（如：Ultimus流程中止的理由.等...）(缺省值:string.Empty)
+            </summary>
+        </member>
+        <member name="T:BC.Ult.Data.ActivationArgsBase">
+            <summary>
+            激活流程对象
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.ActivationArgsBase.connStr">
+            <summary>
+            链接字符串（UltProcess业务库）
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.ActivationArgsBase.dbType">
+            <summary>
+            数据类型
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.ActivationArgsBase.processName">
+            <summary>
+            流程名称
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.ActivationArgsBase.summary">
+            <summary>
+            摘要
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.ActivationArgsBase.processParentId">
+            <summary>
+            流程父Id
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.ActivationArgsBase.variables">
+            <summary>
+            Ultimus参数
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.ActivationArgsBase.stepLabel">
+            <summary>
+            节点名称
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.ActivationArgsBase.assignedToUser">
+            <summary>
+            节点任务操作者
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.ActivationArgsBase.assignedToUserCode">
+            <summary>
+            节点任务操作者编码
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.ActivationArgsBase.processNotes">
+            <summary>
+            流程备注
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.ActivationArgsBase.ConnStr">
+            <summary>
+            *获取或者设置-链接字符串（UltProcess业务库）(缺省值:string.Empty)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.ActivationArgsBase.DbType">
+            <summary>
+            *获取或者设置-数据类型(缺省值:DbContext.Concrete.DbType.SqlServer)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.ActivationArgsBase.ProcessName">
+            <summary>
+            *获取或者设置流程名称(缺省值:string.Empty)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.ActivationArgsBase.Summary">
+            <summary>
+            获取或者设置摘要(缺省值:string.Empty)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.ActivationArgsBase.ProcessParentId">
+            <summary>
+            *获取或者设置-流程父Id(缺省值:null)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.ActivationArgsBase.Variables">
+            <summary>
+            *获取或者设置-Ultimus参数
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.ActivationArgsBase.StepLabel">
+            <summary>
+            *获取或者设置-节点名称(缺省值:null)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.ActivationArgsBase.AssignedToUser">
+            <summary>
+            *获取或者设置-节点任务操作者(workgroup/liyu)(缺省值:null)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.ActivationArgsBase.AssignedToUserCode">
+            <summary>
+            *获取或者设置-节点任务操作者编码(缺省值:null)【与UserCode为同一字段】
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.ActivationArgsBase.ProcessNotes">
+            <summary>
+            获取或者设置-流程备注(缺省值:string.Empty)
+            </summary>
+        </member>
+        <member name="T:BC.Ult.Data.ProcessChecked">
+            <summary>
+            流程提交时的检验对象
+            </summary>
+        </member>
+        <member name="M:BC.Ult.Data.ProcessChecked.#ctor">
+            <summary>
+            流程提交时的检验对象
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.ProcessChecked._UltimusLicense">
+            <summary>
+            节点名称
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.ProcessChecked._ProcessIdIsExists">
+            <summary>
+            当前流程Id是否存在
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.ProcessChecked._TaskIdIsSent">
+            <summary>
+            当前任务是否已经提交了
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.ProcessChecked.UltimusLicense">
+            <summary>
+            *获取或者设置-Ultimus license 占用个数(0：没有被占用)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.ProcessChecked.ProcessIdIsExists">
+            <summary>
+            *获取或者设置-当前流程Id是否存在，一般是在草稿箱中删除的(default：false，不存在；true，存在；)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.ProcessChecked.TaskIdIsSent">
+            <summary>
+            *获取或者设置-当前任务是否已经提交了，避免重复提交(default：true，已经提交了；false，还未提交；)
+            </summary>
+        </member>
+        <member name="T:BC.Ult.Data.BusinessServices.Service.IService.ICountersign`1">
+            <summary>
+            Countersign-接口类
+            </summary>
+            <typeparam name="M">实体对象</typeparam>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.IService.ICountersign`1.AddCountersign(BC.BaseContext.Concrete.Trans,`0,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            新增Countersign
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.IService.ICountersign`1.DeleteCountersign(BC.BaseContext.Concrete.Trans,`0,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            删除Countersign
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.IService.ICountersign`1.UpdateCountersign(BC.BaseContext.Concrete.Trans,`0,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            修改Countersign
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.IService.ICountersign`1.GetAllCountersign(BC.BaseContext.Concrete.Trans,`0,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            获取所有Countersign
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="r">返回类</param>
+            <returns>返回DataTable对象</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.IService.ICountersign`1.DataReaderAllCountersign(BC.BaseContext.Concrete.Trans,`0,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            获取所有Countersign
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="r">返回类</param>
+            <returns>返回IDataReader对象</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.IService.ICountersign`1.DeleteCountersignByProcessId(BC.BaseContext.Concrete.Trans,`0,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            根据ProcessId删除Countersign
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="T:BC.Ult.Data.BusinessServices.Service.IService.IProcess`1">
+            <summary>
+            Process-接口类
+            </summary>
+            <typeparam name="M">实体对象</typeparam>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.IService.IProcess`1.AddProcess(BC.BaseContext.Concrete.Trans,`0,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            新增Process
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.IService.IProcess`1.DeleteProcess(BC.BaseContext.Concrete.Trans,`0,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            删除Process
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.IService.IProcess`1.UpdateProcess(BC.BaseContext.Concrete.Trans,`0,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            修改Process
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.IService.IProcess`1.GetAllProcess(BC.BaseContext.Concrete.Trans,`0,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            获取所有Process
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="r">返回类</param>
+            <returns>返回DataTable对象</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.IService.IProcess`1.DataReaderAllProcess(BC.BaseContext.Concrete.Trans,`0,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            获取所有Process
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="r">返回类</param>
+            <returns>返回IDataReader对象</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.IService.IProcess`1.DeleteProcessByProcessId(BC.BaseContext.Concrete.Trans,`0,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            根据ProcessId删除Process
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.IService.IProcess`1.UpdateProcessByNameIncident(BC.BaseContext.Concrete.Trans,`0,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            流程成功中止后修改Process
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.IService.IProcess`1.GetProcessChecked(System.String,System.String,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            获取流程提交时的，验证数据的正确性
+            1. 验证当前的ProcessId是否存在。如果有值则存在；反之，不存在。
+            2. 验证当前的ProcessId是否已经被提交成功过了。如果有值则已经提交过来；反之，还未提交。
+            3. 验证Ultimus License是否超出
+            </summary>
+            <param name="processId">流程Id</param>
+            <param name="taskId">任务Id</param>
+            <returns>返回DataSet对象</returns>
+        </member>
+        <member name="T:BC.Ult.Data.BusinessServices.Service.IService.IStepUsers`1">
+            <summary>
+            StepUsers-接口类
+            </summary>
+            <typeparam name="M">实体对象</typeparam>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.IService.IStepUsers`1.AddStepUsers(BC.BaseContext.Concrete.Trans,`0,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            新增StepUsers
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.IService.IStepUsers`1.DeleteStepUsers(BC.BaseContext.Concrete.Trans,`0,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            删除StepUsers
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.IService.IStepUsers`1.UpdateStepUsers(BC.BaseContext.Concrete.Trans,`0,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            修改StepUsers
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.IService.IStepUsers`1.GetAllStepUsers(BC.BaseContext.Concrete.Trans,`0,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            获取所有StepUsers
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="r">返回类</param>
+            <returns>返回DataTable对象</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.IService.IStepUsers`1.DataReaderAllStepUsers(BC.BaseContext.Concrete.Trans,`0,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            获取所有StepUsers
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="r">返回类</param>
+            <returns>返回IDataReader对象</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.IService.IStepUsers`1.DeleteStepUsersByProcessId(BC.BaseContext.Concrete.Trans,`0,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            根据ProcessId删除StepUsers
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="T:BC.Ult.Data.BusinessServices.Service.IService.ITaskApproval`1">
+            <summary>
+            TaskApproval-接口类
+            </summary>
+            <typeparam name="M">实体对象</typeparam>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.IService.ITaskApproval`1.AddTaskApproval(BC.BaseContext.Concrete.Trans,`0,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            新增TaskApproval
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.IService.ITaskApproval`1.DeleteTaskApproval(BC.BaseContext.Concrete.Trans,`0,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            删除TaskApproval
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.IService.ITaskApproval`1.UpdateTaskApproval(BC.BaseContext.Concrete.Trans,`0,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            修改TaskApproval
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.IService.ITaskApproval`1.GetAllTaskApproval(BC.BaseContext.Concrete.Trans,`0,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            获取所有TaskApproval
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="r">返回类</param>
+            <returns>返回DataTable对象</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.IService.ITaskApproval`1.DataReaderAllTaskApproval(BC.BaseContext.Concrete.Trans,`0,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            获取所有TaskApproval
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="r">返回类</param>
+            <returns>返回IDataReader对象</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.IService.ITaskApproval`1.DeleteTaskApprovalByProcessId(BC.BaseContext.Concrete.Trans,`0,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            根据ProcessId删除TaskApproval
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.IService.ITaskApproval`1.InsertOrUpdateTaskApproval(BC.BaseContext.Concrete.Trans,BC.Ult.Data.SetUltArgsBase,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            新增或者修改TaskApproval
+            </summary>
+            <param name="t">事务</param>
+            <param name="setUltArgs">设置Ultimus参数对象</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.IService.ITaskApproval`1.GetTaskApproval(BC.BaseContext.Concrete.Trans,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            获取所有ApprovalStatus=2的任务数据
+            </summary>
+            <param name="t">事务</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+            <returns>返回IDataReader对象</returns>
+        </member>
+        <member name="T:BC.Ult.Data.BusinessServices.Service.IService.IUltimusVariables`1">
+            <summary>
+            UltimusVariables-接口类
+            </summary>
+            <typeparam name="M">实体对象</typeparam>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.IService.IUltimusVariables`1.AddUltimusVariables(BC.BaseContext.Concrete.Trans,`0,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            新增UltimusVariables
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.IService.IUltimusVariables`1.DeleteUltimusVariables(BC.BaseContext.Concrete.Trans,`0,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            删除UltimusVariables
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.IService.IUltimusVariables`1.UpdateUltimusVariables(BC.BaseContext.Concrete.Trans,`0,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            修改UltimusVariables
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.IService.IUltimusVariables`1.GetAllUltimusVariables(BC.BaseContext.Concrete.Trans,`0,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            获取所有UltimusVariables
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="r">返回类</param>
+            <returns>返回DataTable对象</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.IService.IUltimusVariables`1.DataReaderAllUltimusVariables(BC.BaseContext.Concrete.Trans,`0,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            获取所有UltimusVariables
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="r">返回类</param>
+            <returns>返回IDataReader对象</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.IService.IUltimusVariables`1.DeleteUltimusVariablesByProcessId(BC.BaseContext.Concrete.Trans,`0,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            根据ProcessId删除UltimusVariables
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="T:BC.Ult.Data.BusinessServices.Service.OracleService.CountersignOracleService`1">
+            <summary>
+            Countersign-Oracle操作类
+            </summary>
+            <typeparam name="M">实体对象</typeparam>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.OracleService.CountersignOracleService`1.#ctor(System.String)">
+            <summary>
+            Countersign-Oracle操作类(构造函数)
+            </summary>
+            <param name="connStr">connStr</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.OracleService.CountersignOracleService`1.AddCountersign(BC.BaseContext.Concrete.Trans,`0,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            新增Countersign
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.OracleService.CountersignOracleService`1.DeleteCountersign(BC.BaseContext.Concrete.Trans,`0,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            删除Countersign
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.OracleService.CountersignOracleService`1.UpdateCountersign(BC.BaseContext.Concrete.Trans,`0,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            修改Countersign
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.OracleService.CountersignOracleService`1.GetAllCountersign(BC.BaseContext.Concrete.Trans,`0,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            获取所有Countersign
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="r">返回类</param>
+            <returns>返回DataTable对象</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.OracleService.CountersignOracleService`1.DataReaderAllCountersign(BC.BaseContext.Concrete.Trans,`0,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            获取所有Countersign
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="r">返回类</param>
+            <returns>返回IDataReader对象</returns>
+        </member>
+        <member name="T:BC.Ult.Data.BusinessServices.Service.OracleService.ProcessOracleService`1">
+            <summary>
+            Process-Oracle操作类
+            </summary>
+            <typeparam name="M">实体对象</typeparam>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.OracleService.ProcessOracleService`1.#ctor(System.String)">
+            <summary>
+            Process-Oracle操作类(构造函数)
+            </summary>
+            <param name="connStr">connStr</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.OracleService.ProcessOracleService`1.AddProcess(BC.BaseContext.Concrete.Trans,`0,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            新增Process
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.OracleService.ProcessOracleService`1.DeleteProcess(BC.BaseContext.Concrete.Trans,`0,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            删除Process
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.OracleService.ProcessOracleService`1.UpdateProcess(BC.BaseContext.Concrete.Trans,`0,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            修改Process
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.OracleService.ProcessOracleService`1.GetAllProcess(BC.BaseContext.Concrete.Trans,`0,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            获取所有Process
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="r">返回类</param>
+            <returns>返回DataTable对象</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.OracleService.ProcessOracleService`1.DataReaderAllProcess(BC.BaseContext.Concrete.Trans,`0,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            获取所有Process
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="r">返回类</param>
+            <returns>返回IDataReader对象</returns>
+        </member>
+        <member name="T:BC.Ult.Data.BusinessServices.Service.OracleService.StepUsersOracleService`1">
+            <summary>
+            StepUsers-Oracle操作类
+            </summary>
+            <typeparam name="M">实体对象</typeparam>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.OracleService.StepUsersOracleService`1.#ctor(System.String)">
+            <summary>
+            StepUsers-Oracle操作类(构造函数)
+            </summary>
+            <param name="connStr">connStr</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.OracleService.StepUsersOracleService`1.AddStepUsers(BC.BaseContext.Concrete.Trans,`0,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            新增StepUsers
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.OracleService.StepUsersOracleService`1.DeleteStepUsers(BC.BaseContext.Concrete.Trans,`0,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            删除StepUsers
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.OracleService.StepUsersOracleService`1.UpdateStepUsers(BC.BaseContext.Concrete.Trans,`0,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            修改StepUsers
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.OracleService.StepUsersOracleService`1.GetAllStepUsers(BC.BaseContext.Concrete.Trans,`0,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            获取所有StepUsers
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="r">返回类</param>
+            <returns>返回DataTable对象</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.OracleService.StepUsersOracleService`1.DataReaderAllStepUsers(BC.BaseContext.Concrete.Trans,`0,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            获取所有StepUsers
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="r">返回类</param>
+            <returns>返回IDataReader对象</returns>
+        </member>
+        <member name="T:BC.Ult.Data.BusinessServices.Service.OracleService.TaskApprovalOracleService`1">
+            <summary>
+            TaskApproval-Oracle操作类
+            </summary>
+            <typeparam name="M">实体对象</typeparam>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.OracleService.TaskApprovalOracleService`1.#ctor(System.String)">
+            <summary>
+            TaskApproval-Oracle操作类(构造函数)
+            </summary>
+            <param name="connStr">connStr</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.OracleService.TaskApprovalOracleService`1.AddTaskApproval(BC.BaseContext.Concrete.Trans,`0,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            新增TaskApproval
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.OracleService.TaskApprovalOracleService`1.DeleteTaskApproval(BC.BaseContext.Concrete.Trans,`0,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            删除TaskApproval
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.OracleService.TaskApprovalOracleService`1.UpdateTaskApproval(BC.BaseContext.Concrete.Trans,`0,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            修改TaskApproval
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.OracleService.TaskApprovalOracleService`1.GetAllTaskApproval(BC.BaseContext.Concrete.Trans,`0,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            获取所有TaskApproval
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="r">返回类</param>
+            <returns>返回DataTable对象</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.OracleService.TaskApprovalOracleService`1.DataReaderAllTaskApproval(BC.BaseContext.Concrete.Trans,`0,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            获取所有TaskApproval
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="r">返回类</param>
+            <returns>返回IDataReader对象</returns>
+        </member>
+        <member name="T:BC.Ult.Data.BusinessServices.Service.OracleService.UltimusVariablesOracleService`1">
+            <summary>
+            UltimusVariables-Oracle操作类
+            </summary>
+            <typeparam name="M">实体对象</typeparam>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.OracleService.UltimusVariablesOracleService`1.#ctor(System.String)">
+            <summary>
+            UltimusVariables-Oracle操作类(构造函数)
+            </summary>
+            <param name="connStr">connStr</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.OracleService.UltimusVariablesOracleService`1.AddUltimusVariables(BC.BaseContext.Concrete.Trans,`0,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            新增UltimusVariables
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.OracleService.UltimusVariablesOracleService`1.DeleteUltimusVariables(BC.BaseContext.Concrete.Trans,`0,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            删除UltimusVariables
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.OracleService.UltimusVariablesOracleService`1.UpdateUltimusVariables(BC.BaseContext.Concrete.Trans,`0,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            修改UltimusVariables
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.OracleService.UltimusVariablesOracleService`1.GetAllUltimusVariables(BC.BaseContext.Concrete.Trans,`0,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            获取所有UltimusVariables
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="r">返回类</param>
+            <returns>返回DataTable对象</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.OracleService.UltimusVariablesOracleService`1.DataReaderAllUltimusVariables(BC.BaseContext.Concrete.Trans,`0,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            获取所有UltimusVariables
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="r">返回类</param>
+            <returns>返回IDataReader对象</returns>
+        </member>
+        <member name="T:BC.Ult.Data.BusinessServices.Service.SqlService.CountersignSqlService`1">
+            <summary>
+            Countersign-Sql操作类
+            </summary>
+            <typeparam name="M">实体对象</typeparam>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.SqlService.CountersignSqlService`1.#ctor(System.String)">
+            <summary>
+            Countersign-Sql操作类(构造函数)
+            </summary>
+            <param name="connStr">connStr</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.SqlService.CountersignSqlService`1.AddCountersign(BC.BaseContext.Concrete.Trans,`0,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            新增Countersign
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.SqlService.CountersignSqlService`1.DeleteCountersign(BC.BaseContext.Concrete.Trans,`0,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            删除Countersign
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.SqlService.CountersignSqlService`1.UpdateCountersign(BC.BaseContext.Concrete.Trans,`0,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            修改Countersign
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.SqlService.CountersignSqlService`1.GetAllCountersign(BC.BaseContext.Concrete.Trans,`0,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            获取所有Countersign
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="r">返回类</param>
+            <returns>返回DataTable对象</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.SqlService.CountersignSqlService`1.DataReaderAllCountersign(BC.BaseContext.Concrete.Trans,`0,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            获取所有Countersign
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="r">返回类</param>
+            <returns>返回IDataReader对象</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.SqlService.CountersignSqlService`1.DeleteCountersignByProcessId(BC.BaseContext.Concrete.Trans,`0,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            根据ProcessId删除Countersign
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="T:BC.Ult.Data.BusinessServices.Service.SqlService.ProcessSqlService`1">
+            <summary>
+            Process-Sql操作类
+            </summary>
+            <typeparam name="M">实体对象</typeparam>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.SqlService.ProcessSqlService`1.#ctor(System.String)">
+            <summary>
+            Process-Sql操作类(构造函数)
+            </summary>
+            <param name="connStr">connStr</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.SqlService.ProcessSqlService`1.AddProcess(BC.BaseContext.Concrete.Trans,`0,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            新增Process
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.SqlService.ProcessSqlService`1.DeleteProcess(BC.BaseContext.Concrete.Trans,`0,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            删除Process
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.SqlService.ProcessSqlService`1.UpdateProcess(BC.BaseContext.Concrete.Trans,`0,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            修改Process
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.SqlService.ProcessSqlService`1.GetAllProcess(BC.BaseContext.Concrete.Trans,`0,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            获取所有Process
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="r">返回类</param>
+            <returns>返回DataTable对象</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.SqlService.ProcessSqlService`1.DataReaderAllProcess(BC.BaseContext.Concrete.Trans,`0,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            获取所有Process
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="r">返回类</param>
+            <returns>返回IDataReader对象</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.SqlService.ProcessSqlService`1.DeleteProcessByProcessId(BC.BaseContext.Concrete.Trans,`0,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            根据ProcessId删除Process
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.SqlService.ProcessSqlService`1.UpdateProcessByNameIncident(BC.BaseContext.Concrete.Trans,`0,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            流程成功中止后修改Process
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.SqlService.ProcessSqlService`1.GetProcessChecked(System.String,System.String,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            获取流程提交时的，验证数据的正确性
+            1. 验证当前的ProcessId是否存在。如果有值则存在；反之，不存在。
+            2. 验证当前的ProcessId是否已经被提交成功过了。如果有值则已经提交过来；反之，还未提交。
+            3. 验证Ultimus License是否超出
+            </summary>
+            <param name="processId">流程Id</param>
+            <param name="taskId">任务Id</param>
+            <returns>返回DataSet对象</returns>
+        </member>
+        <member name="T:BC.Ult.Data.BusinessServices.Service.SqlService.StepUsersSqlService`1">
+            <summary>
+            StepUsers-Sql操作类
+            </summary>
+            <typeparam name="M">实体对象</typeparam>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.SqlService.StepUsersSqlService`1.#ctor(System.String)">
+            <summary>
+            StepUsers-Sql操作类(构造函数)
+            </summary>
+            <param name="connStr">connStr</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.SqlService.StepUsersSqlService`1.AddStepUsers(BC.BaseContext.Concrete.Trans,`0,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            新增StepUsers
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.SqlService.StepUsersSqlService`1.DeleteStepUsers(BC.BaseContext.Concrete.Trans,`0,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            删除StepUsers
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.SqlService.StepUsersSqlService`1.UpdateStepUsers(BC.BaseContext.Concrete.Trans,`0,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            修改StepUsers
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.SqlService.StepUsersSqlService`1.GetAllStepUsers(BC.BaseContext.Concrete.Trans,`0,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            获取所有StepUsers
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="r">返回类</param>
+            <returns>返回DataTable对象</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.SqlService.StepUsersSqlService`1.DataReaderAllStepUsers(BC.BaseContext.Concrete.Trans,`0,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            获取所有StepUsers
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="r">返回类</param>
+            <returns>返回IDataReader对象</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.SqlService.StepUsersSqlService`1.DeleteStepUsersByProcessId(BC.BaseContext.Concrete.Trans,`0,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            根据ProcessId删除StepUsers
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="T:BC.Ult.Data.BusinessServices.Service.SqlService.TaskApprovalSqlService`1">
+            <summary>
+            TaskApproval-Sql操作类
+            </summary>
+            <typeparam name="M">实体对象</typeparam>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.SqlService.TaskApprovalSqlService`1.#ctor(System.String)">
+            <summary>
+            TaskApproval-Sql操作类(构造函数)
+            </summary>
+            <param name="connStr">connStr</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.SqlService.TaskApprovalSqlService`1.AddTaskApproval(BC.BaseContext.Concrete.Trans,`0,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            新增TaskApproval
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.SqlService.TaskApprovalSqlService`1.DeleteTaskApproval(BC.BaseContext.Concrete.Trans,`0,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            删除TaskApproval
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.SqlService.TaskApprovalSqlService`1.UpdateTaskApproval(BC.BaseContext.Concrete.Trans,`0,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            修改TaskApproval
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.SqlService.TaskApprovalSqlService`1.GetAllTaskApproval(BC.BaseContext.Concrete.Trans,`0,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            获取所有TaskApproval
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="r">返回类</param>
+            <returns>返回DataTable对象</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.SqlService.TaskApprovalSqlService`1.DataReaderAllTaskApproval(BC.BaseContext.Concrete.Trans,`0,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            获取所有TaskApproval
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="r">返回类</param>
+            <returns>返回IDataReader对象</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.SqlService.TaskApprovalSqlService`1.InsertOrUpdateTaskApproval(BC.BaseContext.Concrete.Trans,BC.Ult.Data.SetUltArgsBase,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            新增或者修改TaskApproval
+            </summary>
+            <param name="t">事务</param>
+            <param name="setUltArgs">设置Ultimus参数对象</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.SqlService.TaskApprovalSqlService`1.GetTaskApproval(BC.BaseContext.Concrete.Trans,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            获取所有ApprovalStatus=2的任务数据
+            </summary>
+            <param name="t">事务</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+            <returns>返回IDataReader对象</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.SqlService.TaskApprovalSqlService`1.DeleteTaskApprovalByProcessId(BC.BaseContext.Concrete.Trans,`0,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            根据ProcessId删除TaskApproval
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="T:BC.Ult.Data.BusinessServices.Service.SqlService.UltimusVariablesSqlService`1">
+            <summary>
+            UltimusVariables-Sql操作类
+            </summary>
+            <typeparam name="M">实体对象</typeparam>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.SqlService.UltimusVariablesSqlService`1.#ctor(System.String)">
+            <summary>
+            UltimusVariables-Sql操作类(构造函数)
+            </summary>
+            <param name="connStr">connStr</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.SqlService.UltimusVariablesSqlService`1.AddUltimusVariables(BC.BaseContext.Concrete.Trans,`0,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            新增UltimusVariables
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.SqlService.UltimusVariablesSqlService`1.DeleteUltimusVariables(BC.BaseContext.Concrete.Trans,`0,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            删除UltimusVariables
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.SqlService.UltimusVariablesSqlService`1.UpdateUltimusVariables(BC.BaseContext.Concrete.Trans,`0,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            修改UltimusVariables
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.SqlService.UltimusVariablesSqlService`1.GetAllUltimusVariables(BC.BaseContext.Concrete.Trans,`0,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            获取所有UltimusVariables
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="r">返回类</param>
+            <returns>返回DataTable对象</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.SqlService.UltimusVariablesSqlService`1.DataReaderAllUltimusVariables(BC.BaseContext.Concrete.Trans,`0,BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            获取所有UltimusVariables
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="r">返回类</param>
+            <returns>返回IDataReader对象</returns>
+        </member>
+        <member name="M:BC.Ult.Data.BusinessServices.Service.SqlService.UltimusVariablesSqlService`1.DeleteUltimusVariablesByProcessId(BC.BaseContext.Concrete.Trans,`0,System.Collections.Generic.Dictionary{System.String,System.Object},BC.BaseContext.Common.ResultMessage)">
+            <summary>
+            根据ProcessId删除UltimusVariables
+            </summary>
+            <param name="t">事务</param>
+            <param name="m">实体对象</param>
+            <param name="p">条件参数[where后面的条件参数]</param>
+            <param name="r">返回类</param>
+        </member>
+        <member name="T:BC.Ult.Data.CountersignResult">
+            <summary>
+            根据会签Key获取会签人员数量及会签意见（包括不是会签的节点）
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.CountersignResult.signKey">
+            <summary>
+            会签的节点Key
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.CountersignResult.signUserCount">
+            <summary>
+            会签人员数量
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.CountersignResult.signOpinion">
+            <summary>
+            会签意见(默认是标准的会签审批：在会签节点中，有一个人的意见为拒绝，则为拒绝)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.CountersignResult.SignKey">
+            <summary>
+            获取或者设置会签的节点Key（含,）(缺省值:string.Empty)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.CountersignResult.SignUserCount">
+            <summary>
+            *获取或者设置会签人员数量(缺省值:0)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.CountersignResult.SignOpinion">
+            <summary>
+            *获取或者设置会签人员数量(缺省值:Opinion.None)
+            </summary>
+        </member>
+        <member name="T:BC.Ult.Data.ApprovalStatus">
+            <summary>
+            任务审批状态
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.ApprovalStatus.None">
+            <summary>
+            无提交(-1)
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.ApprovalStatus.Save">
+            <summary>
+            业务草稿提交成功(101)
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.ApprovalStatus.Send">
+            <summary>
+            业务提交成功(102)
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.ApprovalStatus.InQueue">
+            <summary>
+            进-Ultimus提交队列(1021)
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.ApprovalStatus.OutQueue">
+            <summary>
+            出-Ultimus提交队列(1022)
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.ApprovalStatus.End">
+            <summary>
+            业务数据成功及Ultimus提交成功(103)
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.ApprovalStatus.Failed">
+            <summary>
+            业务数据成功及Ultimus提交失败(1031)
+            </summary>
+        </member>
+        <member name="T:BC.Ult.Data.IsQueueOperation">
+            <summary>
+            是否用队列方式操作（0：用队列方式；1：不用队列方式；）
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.IsQueueOperation.Yes">
+            <summary>
+            0：用队列方式
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.IsQueueOperation.No">
+            <summary>
+            1：不用队列方式
+            </summary>
+        </member>
+        <member name="T:BC.Ult.Data.Opinion">
+            <summary>
+            意见枚举类
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.Opinion.None">
+            <summary>
+            未设置意见值(-1)
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.Opinion.Approve">
+            <summary>
+            同意(0)
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.Opinion.Reject">
+            <summary>
+            拒绝(1)
+            </summary>
+        </member>
+        <member name="T:BC.Ult.Data.ProcessStatus">
+            <summary>
+            业务流程状态
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.ProcessStatus.None">
+            <summary>
+            流程表单第一次加载成功后(-1)
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.ProcessStatus.Save">
+            <summary>
+            流程表单第一次保存草稿后但未流程提交的状态(101)
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.ProcessStatus.Send">
+            <summary>
+            流程提交后但未流程结束的状态(102)
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.ProcessStatus.End">
+            <summary>
+            流程结束的状态(103)
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.ProcessStatus.Abort">
+            <summary>
+            流程撤销或者中止的状态(104)；注意：此状态是流程未结束时，才能被撤销或者中止；
+            </summary>
+        </member>
+        <member name="T:BC.Ult.Data.SubmitType">
+            <summary>
+            提交类型
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.SubmitType.Save">
+            <summary>
+            保存草稿
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.SubmitType.Send">
+            <summary>
+            提交流程
+            </summary>
+        </member>
+        <member name="T:BC.Ult.Data.ProviderType">
+            <summary>
+            操作驱动类型（0：Localhost；1：Webservice）
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.ProviderType.Localhost">
+            <summary>
+            本地驱动操作，直接DLL操作(但是本地项目必须支持32位)
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.ProviderType.Webservice">
+            <summary>
+            Webservice驱动操作
+            </summary>
+        </member>
+        <member name="T:BC.Ult.Data.StepUserInfo">
+            <summary>
+            节点用户信息类【人员间用英文(用,隔开)】
+            【
+            流程节点名称|用户账号1,用户账号2,用户账号3^用户真实姓名1,用户真实姓名2,用户真实姓名3
+            申请|workgroup/liyu,workgroup/xiebinsheng,workgroup/fufawei^李钰,谢斌晟,陆法伟
+            】
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.StepUserInfo.StepLabel">
+            <summary>
+            节点名称
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.StepUserInfo.UserCode">
+            <summary>
+            【注意：可以存放用户Id或者workgroup/liyu】
+            由域则会带域(workgroup/liyu)；反之，则不带域；
+            存放单用户：用户账号（用户账号1）
+            存放多用户：用户账号（用户账号1,用户账号2,用户账号3）
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.StepUserInfo.UserRealName">
+            <summary>
+            存放单用户：用户真实姓名（用户真实姓名1）
+            存放多用户：用户真实姓名（用户真实姓名1,用户真实姓名2,用户真实姓名3）
+            </summary>
+        </member>
+        <member name="T:BC.Ult.Data.GetUltArgsBase">
+            <summary>
+            *获取Ultimus参数基类
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.GetUltArgsBase.tasks">
+            <summary>
+            Ultimus流程任务实体对象
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.GetUltArgsBase.processId">
+            <summary>
+            流程Id
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.GetUltArgsBase.processCreateUserCode">
+            <summary>
+            流程发起人
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.GetUltArgsBase.processCreateUserRealName">
+            <summary>
+            流程发起人真实名称
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.GetUltArgsBase.processSendTime">
+            <summary>
+            Begin时流程提交的时间
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.GetUltArgsBase.processParentId">
+            <summary>
+            流程父Id
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.GetUltArgsBase.processStatus">
+            <summary>
+            流程状态
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.GetUltArgsBase.currentOpinion">
+            <summary>
+            当前意见
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.GetUltArgsBase.currentComments">
+            <summary>
+            当前意见内容
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.GetUltArgsBase.stepUserList">
+            <summary>
+            节点的人员信息列表
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.GetUltArgsBase.ip">
+            <summary>
+            用户IP
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.GetUltArgsBase.Tasks">
+            <summary>
+            *获取或者设置-Ultimus流程任务实体对象
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.GetUltArgsBase.ProcessId">
+            <summary>
+            *获取或者设置-流程Id(缺省值:null)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.GetUltArgsBase.ProcessCreateUserCode">
+            <summary>
+            *获取或者设置-流程发起人(缺省值:null,与T_Process表CreateUserCode字段对应)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.GetUltArgsBase.ProcessCreateUserRealName">
+            <summary>
+            *获取或者设置-流程发起人真实名称(缺省值:null)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.GetUltArgsBase.ProcessSendTime">
+            <summary>
+            *获取或者设置-Begin时流程提交的时间(缺省值: null)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.GetUltArgsBase.ProcessParentId">
+            <summary>
+            *获取或者设置-流程父Id(缺省值:null)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.GetUltArgsBase.ProcessStatus">
+            <summary>
+            *获取或者设置-流程状态(缺省值:ProcessStatus.None)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.GetUltArgsBase.CurrentOpinion">
+            <summary>
+            *获取或者设置-当前意见(缺省值:Opinion.None)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.GetUltArgsBase.CurrentComments">
+            <summary>
+            *获取或者设置-当前意见内容(缺省值:null)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.GetUltArgsBase.StepUserList">
+            <summary>
+            *获取或者设置-节点的人员的集合，有值则存储至数据库，无值(null)则不用存入数据库(缺省值:new List[StepUserInfo]();)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.GetUltArgsBase.IP">
+            <summary>
+            获取或者设置-用户IP(缺省值:string.Empty)
+            </summary>
+        </member>
+        <member name="T:BC.Ult.Data.ProviderContext">
+            <summary>
+            Ultimus流程数据操作者的工厂类
+            </summary>
+        </member>
+        <member name="M:BC.Ult.Data.ProviderContext.CreateProcessProvider">
+            <summary>
+            创建数据操作者的实例
+            </summary>
+            <returns>IProcessProvider对象</returns>
+        </member>
+        <member name="M:BC.Ult.Data.ProviderContext.CreateUltimusProvider(BC.Ult.Data.ProviderType)">
+            <summary>
+            创建Ultimus操作者的实例
+            </summary>
+            <param name="providerType">providerType(一般值：ProviderType.Webservice)</param>
+            <returns>IUltimus对象</returns>
+        </member>
+        <member name="T:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService">
+            <remarks/>
+        </member>
+        <member name="M:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.#ctor">
+            <remarks/>
+        </member>
+        <member name="M:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.HelloWorld(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.HelloWorldAsync(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.HelloWorldAsync(System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.HelloWorld2(BC.Ult.Data.UltWorkflowWS.ResultMessage,System.String,System.Byte[],System.String,System.String,System.String,System.Int32@)">
+            <remarks/>
+        </member>
+        <member name="M:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.HelloWorld2Async(BC.Ult.Data.UltWorkflowWS.ResultMessage,System.String,System.Byte[],System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.HelloWorld2Async(BC.Ult.Data.UltWorkflowWS.ResultMessage,System.String,System.Byte[],System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.get_Tasks">
+            <remarks/>
+        </member>
+        <member name="M:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.get_TasksAsync">
+            <remarks/>
+        </member>
+        <member name="M:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.get_TasksAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.set_Tasks(BC.Ult.Data.UltWorkflowWS.Tasks)">
+            <remarks/>
+        </member>
+        <member name="M:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.set_TasksAsync(BC.Ult.Data.UltWorkflowWS.Tasks)">
+            <remarks/>
+        </member>
+        <member name="M:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.set_TasksAsync(BC.Ult.Data.UltWorkflowWS.Tasks,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.GetInitiateProcessByLoginName(BC.Ult.Data.UltWorkflowWS.ResultMessage,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.GetInitiateProcessByLoginNameAsync(BC.Ult.Data.UltWorkflowWS.ResultMessage,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.GetInitiateProcessByLoginNameAsync(BC.Ult.Data.UltWorkflowWS.ResultMessage,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.GetTasks(BC.Ult.Data.UltWorkflowWS.ResultMessage,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.GetTasksAsync(BC.Ult.Data.UltWorkflowWS.ResultMessage,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.GetTasksAsync(BC.Ult.Data.UltWorkflowWS.ResultMessage,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.Send(BC.Ult.Data.UltWorkflowWS.ResultMessage,System.String,System.Byte[],System.String,System.String,System.String,System.Int32@)">
+            <remarks/>
+        </member>
+        <member name="M:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.SendAsync(BC.Ult.Data.UltWorkflowWS.ResultMessage,System.String,System.Byte[],System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.SendAsync(BC.Ult.Data.UltWorkflowWS.ResultMessage,System.String,System.Byte[],System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.Abort(BC.Ult.Data.UltWorkflowWS.ResultMessage,System.String,System.Int32,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.AbortAsync(BC.Ult.Data.UltWorkflowWS.ResultMessage,System.String,System.Int32,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.AbortAsync(BC.Ult.Data.UltWorkflowWS.ResultMessage,System.String,System.Int32,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.Return(BC.Ult.Data.UltWorkflowWS.ResultMessage,System.String,System.Byte[],System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.ReturnAsync(BC.Ult.Data.UltWorkflowWS.ResultMessage,System.String,System.Byte[],System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.ReturnAsync(BC.Ult.Data.UltWorkflowWS.ResultMessage,System.String,System.Byte[],System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.TakeBack(BC.Ult.Data.UltWorkflowWS.ResultMessage,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.TakeBackAsync(BC.Ult.Data.UltWorkflowWS.ResultMessage,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.TakeBackAsync(BC.Ult.Data.UltWorkflowWS.ResultMessage,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.TaskGraphic(BC.Ult.Data.UltWorkflowWS.ResultMessage,System.String,System.Int32)">
+            <remarks/>
+        </member>
+        <member name="M:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.TaskGraphicAsync(BC.Ult.Data.UltWorkflowWS.ResultMessage,System.String,System.Int32)">
+            <remarks/>
+        </member>
+        <member name="M:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.TaskGraphicAsync(BC.Ult.Data.UltWorkflowWS.ResultMessage,System.String,System.Int32,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.SetVariableValues(BC.Ult.Data.UltWorkflowWS.ResultMessage,System.String,System.Int32,System.String,System.Object[])">
+            <remarks/>
+        </member>
+        <member name="M:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.SetVariableValuesAsync(BC.Ult.Data.UltWorkflowWS.ResultMessage,System.String,System.Int32,System.String,System.Object[])">
+            <remarks/>
+        </member>
+        <member name="M:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.SetVariableValuesAsync(BC.Ult.Data.UltWorkflowWS.ResultMessage,System.String,System.Int32,System.String,System.Object[],System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.SetVariableValue(BC.Ult.Data.UltWorkflowWS.ResultMessage,System.String,System.Int32,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.SetVariableValueAsync(BC.Ult.Data.UltWorkflowWS.ResultMessage,System.String,System.Int32,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.SetVariableValueAsync(BC.Ult.Data.UltWorkflowWS.ResultMessage,System.String,System.Int32,System.String,System.Object,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.GetVariableValue1(BC.Ult.Data.UltWorkflowWS.ResultMessage,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.GetVariableValue1Async(BC.Ult.Data.UltWorkflowWS.ResultMessage,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.GetVariableValue1Async(BC.Ult.Data.UltWorkflowWS.ResultMessage,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.GetVariableValue2(BC.Ult.Data.UltWorkflowWS.ResultMessage,System.String,System.Int32,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.GetVariableValue2Async(BC.Ult.Data.UltWorkflowWS.ResultMessage,System.String,System.Int32,System.String,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.GetVariableValue2Async(BC.Ult.Data.UltWorkflowWS.ResultMessage,System.String,System.Int32,System.String,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.GetAllTaskVariables1(BC.Ult.Data.UltWorkflowWS.ResultMessage,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.GetAllTaskVariables1Async(BC.Ult.Data.UltWorkflowWS.ResultMessage,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.GetAllTaskVariables1Async(BC.Ult.Data.UltWorkflowWS.ResultMessage,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.GetAllTaskVariables2(BC.Ult.Data.UltWorkflowWS.ResultMessage,System.String,System.Int32,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.GetAllTaskVariables2Async(BC.Ult.Data.UltWorkflowWS.ResultMessage,System.String,System.Int32,System.String,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.GetAllTaskVariables2Async(BC.Ult.Data.UltWorkflowWS.ResultMessage,System.String,System.Int32,System.String,System.String,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.CancelAsync(System.Object)">
+            <remarks/>
+        </member>
+        <member name="E:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.HelloWorldCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.HelloWorld2Completed">
+            <remarks/>
+        </member>
+        <member name="E:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.get_TasksCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.set_TasksCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.GetInitiateProcessByLoginNameCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.GetTasksCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.SendCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.AbortCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.ReturnCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.TakeBackCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.TaskGraphicCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.SetVariableValuesCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.SetVariableValueCompleted">
+            <remarks/>
+        </member>
+        <member name="E:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.GetVariableValue1Completed">
+            <remarks/>
+        </member>
+        <member name="E:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.GetVariableValue2Completed">
+            <remarks/>
+        </member>
+        <member name="E:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.GetAllTaskVariables1Completed">
+            <remarks/>
+        </member>
+        <member name="E:BC.Ult.Data.UltWorkflowWS.UltWorkflowWebService.GetAllTaskVariables2Completed">
+            <remarks/>
+        </member>
+        <member name="T:BC.Ult.Data.UltWorkflowWS.ResultMessage">
+            <remarks/>
+        </member>
+        <member name="T:BC.Ult.Data.UltWorkflowWS.ResultMessageBase">
+            <remarks/>
+        </member>
+        <member name="P:BC.Ult.Data.UltWorkflowWS.ResultMessageBase.AllMessage">
+            <remarks/>
+        </member>
+        <member name="P:BC.Ult.Data.UltWorkflowWS.ResultMessageBase.DebuggerSql">
+            <remarks/>
+        </member>
+        <member name="P:BC.Ult.Data.UltWorkflowWS.ResultMessageBase.ErrorMessage">
+            <remarks/>
+        </member>
+        <member name="P:BC.Ult.Data.UltWorkflowWS.ResultMessageBase.Status">
+            <remarks/>
+        </member>
+        <member name="P:BC.Ult.Data.UltWorkflowWS.ResultMessage.JsonStr">
+            <remarks/>
+        </member>
+        <member name="T:BC.Ult.Data.UltWorkflowWS.Variables">
+            <remarks/>
+        </member>
+        <member name="P:BC.Ult.Data.UltWorkflowWS.Variables.VariableName">
+            <remarks/>
+        </member>
+        <member name="P:BC.Ult.Data.UltWorkflowWS.Variables.VariableValue">
+            <remarks/>
+        </member>
+        <member name="T:BC.Ult.Data.UltWorkflowWS.Tasks">
+            <remarks/>
+        </member>
+        <member name="P:BC.Ult.Data.UltWorkflowWS.Tasks.TaskId">
+            <remarks/>
+        </member>
+        <member name="P:BC.Ult.Data.UltWorkflowWS.Tasks.ProcessName">
+            <remarks/>
+        </member>
+        <member name="P:BC.Ult.Data.UltWorkflowWS.Tasks.Incident">
+            <remarks/>
+        </member>
+        <member name="P:BC.Ult.Data.UltWorkflowWS.Tasks.Summary">
+            <remarks/>
+        </member>
+        <member name="P:BC.Ult.Data.UltWorkflowWS.Tasks.ProcessVersion">
+            <remarks/>
+        </member>
+        <member name="P:BC.Ult.Data.UltWorkflowWS.Tasks.TaskStatus">
+            <remarks/>
+        </member>
+        <member name="P:BC.Ult.Data.UltWorkflowWS.Tasks.StepId">
+            <remarks/>
+        </member>
+        <member name="P:BC.Ult.Data.UltWorkflowWS.Tasks.StepLabel">
+            <remarks/>
+        </member>
+        <member name="P:BC.Ult.Data.UltWorkflowWS.Tasks.Recipient">
+            <remarks/>
+        </member>
+        <member name="P:BC.Ult.Data.UltWorkflowWS.Tasks.RecipientFullName">
+            <remarks/>
+        </member>
+        <member name="P:BC.Ult.Data.UltWorkflowWS.Tasks.RecipientType">
+            <remarks/>
+        </member>
+        <member name="P:BC.Ult.Data.UltWorkflowWS.Tasks.TaskUser">
+            <remarks/>
+        </member>
+        <member name="P:BC.Ult.Data.UltWorkflowWS.Tasks.TaskUserFullName">
+            <remarks/>
+        </member>
+        <member name="P:BC.Ult.Data.UltWorkflowWS.Tasks.AssignedToUser">
+            <remarks/>
+        </member>
+        <member name="P:BC.Ult.Data.UltWorkflowWS.Tasks.AssignedToUserFullName">
+            <remarks/>
+        </member>
+        <member name="P:BC.Ult.Data.UltWorkflowWS.Tasks.SubStatus">
+            <remarks/>
+        </member>
+        <member name="P:BC.Ult.Data.UltWorkflowWS.Tasks.StartTime">
+            <remarks/>
+        </member>
+        <member name="P:BC.Ult.Data.UltWorkflowWS.Tasks.EndTime">
+            <remarks/>
+        </member>
+        <member name="P:BC.Ult.Data.UltWorkflowWS.Tasks.QStartTime">
+            <remarks/>
+        </member>
+        <member name="P:BC.Ult.Data.UltWorkflowWS.Tasks.QEndTime">
+            <remarks/>
+        </member>
+        <member name="P:BC.Ult.Data.UltWorkflowWS.Tasks.DelayTime">
+            <remarks/>
+        </member>
+        <member name="P:BC.Ult.Data.UltWorkflowWS.Tasks.OverDueTime">
+            <remarks/>
+        </member>
+        <member name="P:BC.Ult.Data.UltWorkflowWS.Tasks.UrgentDueTime">
+            <remarks/>
+        </member>
+        <member name="P:BC.Ult.Data.UltWorkflowWS.Tasks.TaskRate">
+            <remarks/>
+        </member>
+        <member name="P:BC.Ult.Data.UltWorkflowWS.Tasks.TaskTime">
+            <remarks/>
+        </member>
+        <member name="P:BC.Ult.Data.UltWorkflowWS.Tasks.Cost">
+            <remarks/>
+        </member>
+        <member name="P:BC.Ult.Data.UltWorkflowWS.Tasks.Notes">
+            <remarks/>
+        </member>
+        <member name="P:BC.Ult.Data.UltWorkflowWS.Tasks.Referer">
+            <remarks/>
+        </member>
+        <member name="P:BC.Ult.Data.UltWorkflowWS.Tasks.LocalsS">
+            <remarks/>
+        </member>
+        <member name="P:BC.Ult.Data.UltWorkflowWS.Tasks.HelpUrl">
+            <remarks/>
+        </member>
+        <member name="T:BC.Ult.Data.UltWorkflowWS.HelloWorldCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BC.Ult.Data.UltWorkflowWS.HelloWorldCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BC.Ult.Data.UltWorkflowWS.HelloWorldCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BC.Ult.Data.UltWorkflowWS.HelloWorld2CompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BC.Ult.Data.UltWorkflowWS.HelloWorld2CompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BC.Ult.Data.UltWorkflowWS.HelloWorld2CompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="P:BC.Ult.Data.UltWorkflowWS.HelloWorld2CompletedEventArgs.incident">
+            <remarks/>
+        </member>
+        <member name="T:BC.Ult.Data.UltWorkflowWS.get_TasksCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BC.Ult.Data.UltWorkflowWS.get_TasksCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BC.Ult.Data.UltWorkflowWS.get_TasksCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BC.Ult.Data.UltWorkflowWS.set_TasksCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BC.Ult.Data.UltWorkflowWS.GetInitiateProcessByLoginNameCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BC.Ult.Data.UltWorkflowWS.GetInitiateProcessByLoginNameCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BC.Ult.Data.UltWorkflowWS.GetInitiateProcessByLoginNameCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BC.Ult.Data.UltWorkflowWS.GetTasksCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BC.Ult.Data.UltWorkflowWS.GetTasksCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BC.Ult.Data.UltWorkflowWS.GetTasksCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BC.Ult.Data.UltWorkflowWS.SendCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BC.Ult.Data.UltWorkflowWS.SendCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BC.Ult.Data.UltWorkflowWS.SendCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="P:BC.Ult.Data.UltWorkflowWS.SendCompletedEventArgs.incident">
+            <remarks/>
+        </member>
+        <member name="T:BC.Ult.Data.UltWorkflowWS.AbortCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BC.Ult.Data.UltWorkflowWS.AbortCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BC.Ult.Data.UltWorkflowWS.AbortCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BC.Ult.Data.UltWorkflowWS.ReturnCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BC.Ult.Data.UltWorkflowWS.ReturnCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BC.Ult.Data.UltWorkflowWS.ReturnCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BC.Ult.Data.UltWorkflowWS.TakeBackCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BC.Ult.Data.UltWorkflowWS.TakeBackCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BC.Ult.Data.UltWorkflowWS.TakeBackCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BC.Ult.Data.UltWorkflowWS.TaskGraphicCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BC.Ult.Data.UltWorkflowWS.TaskGraphicCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BC.Ult.Data.UltWorkflowWS.TaskGraphicCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BC.Ult.Data.UltWorkflowWS.SetVariableValuesCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BC.Ult.Data.UltWorkflowWS.SetVariableValuesCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BC.Ult.Data.UltWorkflowWS.SetVariableValuesCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BC.Ult.Data.UltWorkflowWS.SetVariableValueCompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BC.Ult.Data.UltWorkflowWS.SetVariableValueCompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BC.Ult.Data.UltWorkflowWS.SetVariableValueCompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BC.Ult.Data.UltWorkflowWS.GetVariableValue1CompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BC.Ult.Data.UltWorkflowWS.GetVariableValue1CompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BC.Ult.Data.UltWorkflowWS.GetVariableValue1CompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BC.Ult.Data.UltWorkflowWS.GetVariableValue2CompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BC.Ult.Data.UltWorkflowWS.GetVariableValue2CompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BC.Ult.Data.UltWorkflowWS.GetVariableValue2CompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BC.Ult.Data.UltWorkflowWS.GetAllTaskVariables1CompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BC.Ult.Data.UltWorkflowWS.GetAllTaskVariables1CompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BC.Ult.Data.UltWorkflowWS.GetAllTaskVariables1CompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BC.Ult.Data.UltWorkflowWS.GetAllTaskVariables2CompletedEventHandler">
+            <remarks/>
+        </member>
+        <member name="T:BC.Ult.Data.UltWorkflowWS.GetAllTaskVariables2CompletedEventArgs">
+            <remarks/>
+        </member>
+        <member name="P:BC.Ult.Data.UltWorkflowWS.GetAllTaskVariables2CompletedEventArgs.Result">
+            <remarks/>
+        </member>
+        <member name="T:BC.Ult.Data.SetUltArgsBase">
+            <summary>
+            *设置Ultimus参数基类
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.SetUltArgsBase.connStr">
+            <summary>
+            链接字符串（UltProcess业务库）
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.SetUltArgsBase.dbType">
+            <summary>
+            数据类型
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.SetUltArgsBase.variables">
+            <summary>
+            Ultimus参数
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.SetUltArgsBase.stepLabel">
+            <summary>
+            节点名称
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.SetUltArgsBase.assignedToUser">
+            <summary>
+            节点任务操作者
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.SetUltArgsBase.assignedToUserCode">
+            <summary>
+            节点任务操作者编码
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.SetUltArgsBase.taskId">
+            <summary>
+            任务Id
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.SetUltArgsBase.processName">
+            <summary>
+            流程名称
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.SetUltArgsBase.incident">
+            <summary>
+            流程实例
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.SetUltArgsBase.summary">
+            <summary>
+            摘要
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.SetUltArgsBase.processId">
+            <summary>
+            流程Id
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.SetUltArgsBase.processParentId">
+            <summary>
+            流程父Id
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.SetUltArgsBase.submitType">
+            <summary>
+            流程提交类型
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.SetUltArgsBase.processIsEnd">
+            <summary>
+            流程是否办结
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.SetUltArgsBase.isCurrentBatch">
+            <summary>
+            是否当前批次（true：审批的当前批次；false：审批的历史批次；）
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.SetUltArgsBase.currentOpinion">
+            <summary>
+            当前意见
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.SetUltArgsBase.currentComments">
+            <summary>
+            当前意见内容
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.SetUltArgsBase.signKeyList">
+            <summary>
+            组合成会签Key值，用数组的形式存放节点名称
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.SetUltArgsBase.stepUserList">
+            <summary>
+            节点的人员信息列表
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.SetUltArgsBase.countersignResult">
+            <summary>
+            获取会签对象信息
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.SetUltArgsBase.signedPhotograph">
+            <summary>
+            签名照二进制流
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.SetUltArgsBase.ip">
+            <summary>
+            用户IP
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.SetUltArgsBase.processNotes">
+            <summary>
+            流程备注
+            </summary>
+        </member>
+        <member name="F:BC.Ult.Data.SetUltArgsBase.isQueueOperation">
+            <summary>
+            是否用队列方式操作（0：用队列方式；1：不用队列方式；）
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.SetUltArgsBase.ConnStr">
+            <summary>
+            *获取或者设置-链接字符串（UltProcess业务库）(缺省值:string.Empty)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.SetUltArgsBase.DbType">
+            <summary>
+            *获取或者设置-数据类型(缺省值:DbContext.Concrete.DbType.SqlServer)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.SetUltArgsBase.Variables">
+            <summary>
+            *获取或者设置-Ultimus参数
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.SetUltArgsBase.StepLabel">
+            <summary>
+            *获取或者设置-节点名称(缺省值:null)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.SetUltArgsBase.AssignedToUser">
+            <summary>
+            *获取或者设置-节点任务操作者(workgroup/liyu)(缺省值:null)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.SetUltArgsBase.AssignedToUserCode">
+            <summary>
+            *获取或者设置-节点任务操作者编码(缺省值:null)【与UserCode为同一字段】
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.SetUltArgsBase.TaskId">
+            <summary>
+            *获取或者设置-任务Id(缺省值:null)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.SetUltArgsBase.ProcessName">
+            <summary>
+            *获取或者设置-流程名称(缺省值:null)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.SetUltArgsBase.Incident">
+            <summary>
+            *获取或者设置-流程实例(缺省值:0)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.SetUltArgsBase.Summary">
+            <summary>
+            *获取或者设置-摘要(缺省值:null)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.SetUltArgsBase.ProcessId">
+            <summary>
+            *获取或者设置-流程Id(缺省值:null)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.SetUltArgsBase.ProcessParentId">
+            <summary>
+            *获取或者设置-流程父Id(缺省值:null)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.SetUltArgsBase.SubmitType">
+            <summary>
+            *获取或者设置-流程提交类型(缺省值:SubmitType.Save)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.SetUltArgsBase.ProcessIsEnd">
+            <summary>
+            *获取或者设置-流程是否办结(缺省值:false)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.SetUltArgsBase.IsCurrentBatch">
+            <summary>
+            *获取或者设置-是否当前批次（true：审批的当前批次；false：审批的历史批次；）(缺省值:true)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.SetUltArgsBase.CurrentOpinion">
+            <summary>
+            *获取或者设置-当前意见(缺省值:Opinion.None)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.SetUltArgsBase.CurrentComments">
+            <summary>
+            *获取或者设置-当前意见内容(缺省值:null)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.SetUltArgsBase.SignKeyList">
+            <summary>
+            *获取或者设置-组合会签Key，有值则存储至数据库，无值(null)则不用存入数据库(缺省值:new List[string[]]())
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.SetUltArgsBase.StepUserList">
+            <summary>
+            *获取或者设置-组合节点的人员，有值则存储至数据库，无值(null)则不用存入数据库(缺省值:new List[StepUserInfo]();)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.SetUltArgsBase.CountersignResult">
+            <summary>
+            *获取或者设置-获取会签对象信息（如此对象为null，那肯定提交不了流程）
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.SetUltArgsBase.SignedPhotograph">
+            <summary>
+            获取或者设置-签名照(缺省值:null)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.SetUltArgsBase.IP">
+            <summary>
+            获取或者设置-用户IP(缺省值:string.Empty)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.SetUltArgsBase.ProcessNotes">
+            <summary>
+            获取或者设置-流程备注(缺省值:string.Empty)
+            </summary>
+        </member>
+        <member name="P:BC.Ult.Data.SetUltArgsBase.IsQueueOperation">
+            <summary>
+            获取或者设置-是否用队列方式操作（0：用队列方式；1：不用队列方式；）(缺省值:IsQueueOperation.Yes(0))
+            </summary>
+        </member>
+    </members>
+</doc>

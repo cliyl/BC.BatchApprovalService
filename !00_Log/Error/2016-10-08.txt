@@ -1,0 +1,95 @@
+
+异常综合信息（类：BC.BatchApprovalService.CommonServices.ThreadWithState；函数名称：ThreadProcessing；）：
+-----------
+.Net异常信息：
+   未将对象引用设置到对象的实例。
+.Net堆栈信息：
+   在 Cooper.Ult.BpmBusinessServices.BusinessServices.PurchasingRequestProcessV2.Business.PurchasingRequestBusiness.GetMailContent(Trans t, PurchasingRequest m, Dictionary`2 p, ResultMessage r, Boolean processIsEnd, String processId, String processName) 位置 f:\MyWorks\04_项目管理\00_项目中心\04_库博汽车标准配件(昆山)有限公司\Ultimus BPM_WuX-Proj-201509170909\源码管理\CooperUltBpm\Sol_CooperUltBpm\Cooper.Ult.BpmBusinessServices\BusinessServices\PurchasingRequestProcessV2\Business\PurchasingRequestBusiness.cs:行号 229
+   在 Cooper.Ult.BpmBusinessServices.BusinessServices.PurchasingRequestProcessV2.Business.StepLabel.PlantController.Submit(ResultMessage r) 位置 f:\MyWorks\04_项目管理\00_项目中心\04_库博汽车标准配件(昆山)有限公司\Ultimus BPM_WuX-Proj-201509170909\源码管理\CooperUltBpm\Sol_CooperUltBpm\Cooper.Ult.BpmBusinessServices\BusinessServices\PurchasingRequestProcessV2\Business\StepLabel\PlantController.cs:行号 192
+   在 Cooper.Ult.BpmBusinessServices.BusinessServices.PurchasingRequestProcessV2.Business.PurchasingRequestSubmit.Work(BaseInfo baseInfo, GetUltArgs getUltArgs, CurrentApprovalInfo currentApprovalInfo, PurchasingRequest m, StepPurchasingRequest processStep, SubmitType submitType, Boolean _isBatchApproval, ResultMessage r) 位置 f:\MyWorks\04_项目管理\00_项目中心\04_库博汽车标准配件(昆山)有限公司\Ultimus BPM_WuX-Proj-201509170909\源码管理\CooperUltBpm\Sol_CooperUltBpm\Cooper.Ult.BpmBusinessServices\BusinessServices\PurchasingRequestProcessV2\Business\PurchasingRequestSubmit.cs:行号 194
+   在 BC.BatchApprovalService.CommonServices.ThreadWithState.ThreadProcessing() 位置 f:\MyWorks\04_项目管理\00_项目中心\04_库博汽车标准配件(昆山)有限公司\Ultimus BPM_WuX-Proj-201509170909\源码管理\CooperUltBpm\Sol_CooperUltBpm\BC.BatchApprovalService\CommonServices\ThreadWithState.cs:行号 168
+-----------
+===========
+自定义信息：
+   服务(BC.BatchApprovalService)异常停止，停止时间(2016/10/8 18:34:08)[邮件提醒管理员]_邮件发送给管理员[成功]
+===========
+
+
+--------------------------------------------------------2016/10/8 18:34:08--------------------------------------------------------
+
+
+异常综合信息（类：BC.BatchApprovalService.CommonServices.ThreadWithState；函数名称：ThreadProcessing；）：
+-----------
+.Net异常信息：
+   未将对象引用设置到对象的实例。
+.Net堆栈信息：
+   在 Cooper.Ult.BpmBusinessServices.BusinessServices.PurchasingRequestProcessV2.Business.PurchasingRequestBusiness.GetMailContent(Trans t, PurchasingRequest m, Dictionary`2 p, ResultMessage r, Boolean processIsEnd, String processId, String processName) 位置 f:\MyWorks\04_项目管理\00_项目中心\04_库博汽车标准配件(昆山)有限公司\Ultimus BPM_WuX-Proj-201509170909\源码管理\CooperUltBpm\Sol_CooperUltBpm\Cooper.Ult.BpmBusinessServices\BusinessServices\PurchasingRequestProcessV2\Business\PurchasingRequestBusiness.cs:行号 229
+   在 Cooper.Ult.BpmBusinessServices.BusinessServices.PurchasingRequestProcessV2.Business.StepLabel.PlantController.Submit(ResultMessage r) 位置 f:\MyWorks\04_项目管理\00_项目中心\04_库博汽车标准配件(昆山)有限公司\Ultimus BPM_WuX-Proj-201509170909\源码管理\CooperUltBpm\Sol_CooperUltBpm\Cooper.Ult.BpmBusinessServices\BusinessServices\PurchasingRequestProcessV2\Business\StepLabel\PlantController.cs:行号 192
+   在 Cooper.Ult.BpmBusinessServices.BusinessServices.PurchasingRequestProcessV2.Business.PurchasingRequestSubmit.Work(BaseInfo baseInfo, GetUltArgs getUltArgs, CurrentApprovalInfo currentApprovalInfo, PurchasingRequest m, StepPurchasingRequest processStep, SubmitType submitType, Boolean _isBatchApproval, ResultMessage r) 位置 f:\MyWorks\04_项目管理\00_项目中心\04_库博汽车标准配件(昆山)有限公司\Ultimus BPM_WuX-Proj-201509170909\源码管理\CooperUltBpm\Sol_CooperUltBpm\Cooper.Ult.BpmBusinessServices\BusinessServices\PurchasingRequestProcessV2\Business\PurchasingRequestSubmit.cs:行号 194
+   在 BC.BatchApprovalService.CommonServices.ThreadWithState.ThreadProcessing() 位置 f:\MyWorks\04_项目管理\00_项目中心\04_库博汽车标准配件(昆山)有限公司\Ultimus BPM_WuX-Proj-201509170909\源码管理\CooperUltBpm\Sol_CooperUltBpm\BC.BatchApprovalService\CommonServices\ThreadWithState.cs:行号 168
+-----------
+===========
+自定义信息：
+   服务(BC.BatchApprovalService)异常停止，停止时间(2016/10/8 18:36:42)[邮件提醒管理员]_邮件发送给管理员[成功]
+===========
+
+
+--------------------------------------------------------2016/10/8 18:36:42--------------------------------------------------------
+
+
+异常综合信息（类：BC.BatchApprovalService.CommonServices.ThreadWithState；函数名称：ThreadProcessing；）：
+-----------
+.Net异常信息：
+   未将对象引用设置到对象的实例。
+.Net堆栈信息：
+   在 Cooper.Ult.BpmBusinessServices.BusinessServices.PurchasingRequestProcessV2.Business.PurchasingRequestBusiness.GetMailContent(Trans t, PurchasingRequest m, Dictionary`2 p, ResultMessage r, Boolean processIsEnd, String processId, String processName) 位置 f:\MyWorks\04_项目管理\00_项目中心\04_库博汽车标准配件(昆山)有限公司\Ultimus BPM_WuX-Proj-201509170909\源码管理\CooperUltBpm\Sol_CooperUltBpm\Cooper.Ult.BpmBusinessServices\BusinessServices\PurchasingRequestProcessV2\Business\PurchasingRequestBusiness.cs:行号 229
+   在 Cooper.Ult.BpmBusinessServices.BusinessServices.PurchasingRequestProcessV2.Business.StepLabel.PlantController.Submit(ResultMessage r) 位置 f:\MyWorks\04_项目管理\00_项目中心\04_库博汽车标准配件(昆山)有限公司\Ultimus BPM_WuX-Proj-201509170909\源码管理\CooperUltBpm\Sol_CooperUltBpm\Cooper.Ult.BpmBusinessServices\BusinessServices\PurchasingRequestProcessV2\Business\StepLabel\PlantController.cs:行号 192
+   在 Cooper.Ult.BpmBusinessServices.BusinessServices.PurchasingRequestProcessV2.Business.PurchasingRequestSubmit.Work(BaseInfo baseInfo, GetUltArgs getUltArgs, CurrentApprovalInfo currentApprovalInfo, PurchasingRequest m, StepPurchasingRequest processStep, SubmitType submitType, Boolean _isBatchApproval, ResultMessage r) 位置 f:\MyWorks\04_项目管理\00_项目中心\04_库博汽车标准配件(昆山)有限公司\Ultimus BPM_WuX-Proj-201509170909\源码管理\CooperUltBpm\Sol_CooperUltBpm\Cooper.Ult.BpmBusinessServices\BusinessServices\PurchasingRequestProcessV2\Business\PurchasingRequestSubmit.cs:行号 194
+   在 BC.BatchApprovalService.CommonServices.ThreadWithState.ThreadProcessing() 位置 f:\MyWorks\04_项目管理\00_项目中心\04_库博汽车标准配件(昆山)有限公司\Ultimus BPM_WuX-Proj-201509170909\源码管理\CooperUltBpm\Sol_CooperUltBpm\BC.BatchApprovalService\CommonServices\ThreadWithState.cs:行号 168
+-----------
+===========
+自定义信息：
+   服务(BC.BatchApprovalService)异常停止，停止时间(2016/10/8 18:37:31)[邮件提醒管理员]_邮件发送给管理员[成功]
+===========
+
+
+--------------------------------------------------------2016/10/8 18:37:31--------------------------------------------------------
+
+
+异常综合信息（类：BC.BatchApprovalService.CommonServices.ThreadWithState；函数名称：ThreadProcessing；）：
+-----------
+.Net异常信息：
+   未将对象引用设置到对象的实例。
+.Net堆栈信息：
+   在 Cooper.Ult.BpmBusinessServices.BusinessServices.PurchasingRequestProcessV2.Business.PurchasingRequestBusiness.GetMailContent(Trans t, PurchasingRequest m, Dictionary`2 p, ResultMessage r, Boolean processIsEnd, String processId, String processName) 位置 f:\MyWorks\04_项目管理\00_项目中心\04_库博汽车标准配件(昆山)有限公司\Ultimus BPM_WuX-Proj-201509170909\源码管理\CooperUltBpm\Sol_CooperUltBpm\Cooper.Ult.BpmBusinessServices\BusinessServices\PurchasingRequestProcessV2\Business\PurchasingRequestBusiness.cs:行号 229
+   在 Cooper.Ult.BpmBusinessServices.BusinessServices.PurchasingRequestProcessV2.Business.StepLabel.PlantController.Submit(ResultMessage r) 位置 f:\MyWorks\04_项目管理\00_项目中心\04_库博汽车标准配件(昆山)有限公司\Ultimus BPM_WuX-Proj-201509170909\源码管理\CooperUltBpm\Sol_CooperUltBpm\Cooper.Ult.BpmBusinessServices\BusinessServices\PurchasingRequestProcessV2\Business\StepLabel\PlantController.cs:行号 192
+   在 Cooper.Ult.BpmBusinessServices.BusinessServices.PurchasingRequestProcessV2.Business.PurchasingRequestSubmit.Work(BaseInfo baseInfo, GetUltArgs getUltArgs, CurrentApprovalInfo currentApprovalInfo, PurchasingRequest m, StepPurchasingRequest processStep, SubmitType submitType, Boolean _isBatchApproval, ResultMessage r) 位置 f:\MyWorks\04_项目管理\00_项目中心\04_库博汽车标准配件(昆山)有限公司\Ultimus BPM_WuX-Proj-201509170909\源码管理\CooperUltBpm\Sol_CooperUltBpm\Cooper.Ult.BpmBusinessServices\BusinessServices\PurchasingRequestProcessV2\Business\PurchasingRequestSubmit.cs:行号 194
+   在 BC.BatchApprovalService.CommonServices.ThreadWithState.ThreadProcessing() 位置 f:\MyWorks\04_项目管理\00_项目中心\04_库博汽车标准配件(昆山)有限公司\Ultimus BPM_WuX-Proj-201509170909\源码管理\CooperUltBpm\Sol_CooperUltBpm\BC.BatchApprovalService\CommonServices\ThreadWithState.cs:行号 168
+-----------
+===========
+自定义信息：
+   服务(BC.BatchApprovalService)异常停止，停止时间(2016/10/8 18:41:00)[邮件提醒管理员]_邮件发送给管理员[成功]
+===========
+
+
+--------------------------------------------------------2016/10/8 18:41:00--------------------------------------------------------
+
+
+异常综合信息（类：BC.BatchApprovalService.CommonServices.ThreadWithState；函数名称：ThreadProcessing；）：
+-----------
+.Net异常信息：
+   未将对象引用设置到对象的实例。
+.Net堆栈信息：
+   在 Cooper.Ult.BpmBusinessServices.BusinessServices.PurchasingRequestProcessV2.Business.PurchasingRequestBusiness.GetMailContent(Trans t, PurchasingRequest m, Dictionary`2 p, ResultMessage r, Boolean processIsEnd, String processId, String processName) 位置 f:\MyWorks\04_项目管理\00_项目中心\04_库博汽车标准配件(昆山)有限公司\Ultimus BPM_WuX-Proj-201509170909\源码管理\CooperUltBpm\Sol_CooperUltBpm\Cooper.Ult.BpmBusinessServices\BusinessServices\PurchasingRequestProcessV2\Business\PurchasingRequestBusiness.cs:行号 229
+   在 Cooper.Ult.BpmBusinessServices.BusinessServices.PurchasingRequestProcessV2.Business.StepLabel.PlantController.Submit(ResultMessage r) 位置 f:\MyWorks\04_项目管理\00_项目中心\04_库博汽车标准配件(昆山)有限公司\Ultimus BPM_WuX-Proj-201509170909\源码管理\CooperUltBpm\Sol_CooperUltBpm\Cooper.Ult.BpmBusinessServices\BusinessServices\PurchasingRequestProcessV2\Business\StepLabel\PlantController.cs:行号 192
+   在 Cooper.Ult.BpmBusinessServices.BusinessServices.PurchasingRequestProcessV2.Business.PurchasingRequestSubmit.Work(BaseInfo baseInfo, GetUltArgs getUltArgs, CurrentApprovalInfo currentApprovalInfo, PurchasingRequest m, StepPurchasingRequest processStep, SubmitType submitType, Boolean _isBatchApproval, ResultMessage r) 位置 f:\MyWorks\04_项目管理\00_项目中心\04_库博汽车标准配件(昆山)有限公司\Ultimus BPM_WuX-Proj-201509170909\源码管理\CooperUltBpm\Sol_CooperUltBpm\Cooper.Ult.BpmBusinessServices\BusinessServices\PurchasingRequestProcessV2\Business\PurchasingRequestSubmit.cs:行号 194
+   在 BC.BatchApprovalService.CommonServices.ThreadWithState.ThreadProcessing() 位置 f:\MyWorks\04_项目管理\00_项目中心\04_库博汽车标准配件(昆山)有限公司\Ultimus BPM_WuX-Proj-201509170909\源码管理\CooperUltBpm\Sol_CooperUltBpm\BC.BatchApprovalService\CommonServices\ThreadWithState.cs:行号 168
+-----------
+===========
+自定义信息：
+   服务(BC.BatchApprovalService)异常停止，停止时间(2016/10/8 20:07:11)[邮件提醒管理员]_邮件发送给管理员[成功]
+===========
+
+
+--------------------------------------------------------2016/10/8 20:07:11--------------------------------------------------------
+
